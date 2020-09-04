@@ -112,7 +112,7 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
     private TextView selectedCount;
     //private TextView invite;
     private RelativeLayout toolbarContainer, cabContainer;
-    Button data_btn;
+
     private TabLayout tabLayout;
     private SwipeControlViewPager viewPager;
 
@@ -195,21 +195,12 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
         updateFcmToken();
         loadAdd();
 
-        data_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                Intent  intent=new Intent(getApplicationContext(),UploadDataActivity.class);
-                intent.putExtra("user_id",userMe.getId());
-                startActivity(intent);
-
-            }
-        });
     }
 
     private void initUi() {
         usersImage = findViewById(R.id.users_image);
-        data_btn = findViewById(R.id.data_btn);
+
         menuRecyclerView = findViewById(R.id.menu_recycler_view);
         swipeMenuRecyclerView = findViewById(R.id.menu_recycler_view_swipe_refresh);
         drawerLayout = findViewById(R.id.drawer_layout);

@@ -27,26 +27,26 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
     private static final Set<Class<? extends RealmModel>> MODEL_CLASSES;
     static {
         Set<Class<? extends RealmModel>> modelClasses = new HashSet<Class<? extends RealmModel>>(7);
-        modelClasses.add(com.zamba.testchat.models.Attachment.class);
+        modelClasses.add(com.zamba.testchat.models.Message.class);
         modelClasses.add(com.zamba.testchat.models.Chat.class);
         modelClasses.add(com.zamba.testchat.models.Group.class);
-        modelClasses.add(com.zamba.testchat.models.LogCall.class);
-        modelClasses.add(com.zamba.testchat.models.Message.class);
+        modelClasses.add(com.zamba.testchat.models.Attachment.class);
         modelClasses.add(com.zamba.testchat.models.MyString.class);
         modelClasses.add(com.zamba.testchat.models.User.class);
+        modelClasses.add(com.zamba.testchat.models.LogCall.class);
         MODEL_CLASSES = Collections.unmodifiableSet(modelClasses);
     }
 
     @Override
     public Map<Class<? extends RealmModel>, OsObjectSchemaInfo> getExpectedObjectSchemaInfoMap() {
         Map<Class<? extends RealmModel>, OsObjectSchemaInfo> infoMap = new HashMap<Class<? extends RealmModel>, OsObjectSchemaInfo>(7);
-        infoMap.put(com.zamba.testchat.models.Attachment.class, io.realm.com_zamba_testchat_models_AttachmentRealmProxy.getExpectedObjectSchemaInfo());
+        infoMap.put(com.zamba.testchat.models.Message.class, io.realm.com_zamba_testchat_models_MessageRealmProxy.getExpectedObjectSchemaInfo());
         infoMap.put(com.zamba.testchat.models.Chat.class, io.realm.com_zamba_testchat_models_ChatRealmProxy.getExpectedObjectSchemaInfo());
         infoMap.put(com.zamba.testchat.models.Group.class, io.realm.com_zamba_testchat_models_GroupRealmProxy.getExpectedObjectSchemaInfo());
-        infoMap.put(com.zamba.testchat.models.LogCall.class, io.realm.com_zamba_testchat_models_LogCallRealmProxy.getExpectedObjectSchemaInfo());
-        infoMap.put(com.zamba.testchat.models.Message.class, io.realm.com_zamba_testchat_models_MessageRealmProxy.getExpectedObjectSchemaInfo());
+        infoMap.put(com.zamba.testchat.models.Attachment.class, io.realm.com_zamba_testchat_models_AttachmentRealmProxy.getExpectedObjectSchemaInfo());
         infoMap.put(com.zamba.testchat.models.MyString.class, io.realm.com_zamba_testchat_models_MyStringRealmProxy.getExpectedObjectSchemaInfo());
         infoMap.put(com.zamba.testchat.models.User.class, io.realm.com_zamba_testchat_models_UserRealmProxy.getExpectedObjectSchemaInfo());
+        infoMap.put(com.zamba.testchat.models.LogCall.class, io.realm.com_zamba_testchat_models_LogCallRealmProxy.getExpectedObjectSchemaInfo());
         return infoMap;
     }
 
@@ -54,8 +54,8 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
     public ColumnInfo createColumnInfo(Class<? extends RealmModel> clazz, OsSchemaInfo schemaInfo) {
         checkClass(clazz);
 
-        if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
-            return io.realm.com_zamba_testchat_models_AttachmentRealmProxy.createColumnInfo(schemaInfo);
+        if (clazz.equals(com.zamba.testchat.models.Message.class)) {
+            return io.realm.com_zamba_testchat_models_MessageRealmProxy.createColumnInfo(schemaInfo);
         }
         if (clazz.equals(com.zamba.testchat.models.Chat.class)) {
             return io.realm.com_zamba_testchat_models_ChatRealmProxy.createColumnInfo(schemaInfo);
@@ -63,17 +63,17 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
         if (clazz.equals(com.zamba.testchat.models.Group.class)) {
             return io.realm.com_zamba_testchat_models_GroupRealmProxy.createColumnInfo(schemaInfo);
         }
-        if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
-            return io.realm.com_zamba_testchat_models_LogCallRealmProxy.createColumnInfo(schemaInfo);
-        }
-        if (clazz.equals(com.zamba.testchat.models.Message.class)) {
-            return io.realm.com_zamba_testchat_models_MessageRealmProxy.createColumnInfo(schemaInfo);
+        if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
+            return io.realm.com_zamba_testchat_models_AttachmentRealmProxy.createColumnInfo(schemaInfo);
         }
         if (clazz.equals(com.zamba.testchat.models.MyString.class)) {
             return io.realm.com_zamba_testchat_models_MyStringRealmProxy.createColumnInfo(schemaInfo);
         }
         if (clazz.equals(com.zamba.testchat.models.User.class)) {
             return io.realm.com_zamba_testchat_models_UserRealmProxy.createColumnInfo(schemaInfo);
+        }
+        if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
+            return io.realm.com_zamba_testchat_models_LogCallRealmProxy.createColumnInfo(schemaInfo);
         }
         throw getMissingProxyClassException(clazz);
     }
@@ -82,8 +82,8 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
     public String getSimpleClassNameImpl(Class<? extends RealmModel> clazz) {
         checkClass(clazz);
 
-        if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
-            return "Attachment";
+        if (clazz.equals(com.zamba.testchat.models.Message.class)) {
+            return "Message";
         }
         if (clazz.equals(com.zamba.testchat.models.Chat.class)) {
             return "Chat";
@@ -91,17 +91,17 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
         if (clazz.equals(com.zamba.testchat.models.Group.class)) {
             return "Group";
         }
-        if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
-            return "LogCall";
-        }
-        if (clazz.equals(com.zamba.testchat.models.Message.class)) {
-            return "Message";
+        if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
+            return "Attachment";
         }
         if (clazz.equals(com.zamba.testchat.models.MyString.class)) {
             return "MyString";
         }
         if (clazz.equals(com.zamba.testchat.models.User.class)) {
             return "User";
+        }
+        if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
+            return "LogCall";
         }
         throw getMissingProxyClassException(clazz);
     }
@@ -113,8 +113,8 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
             objectContext.set((BaseRealm) baseRealm, row, columnInfo, acceptDefaultValue, excludeFields);
             checkClass(clazz);
 
-            if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
-                return clazz.cast(new io.realm.com_zamba_testchat_models_AttachmentRealmProxy());
+            if (clazz.equals(com.zamba.testchat.models.Message.class)) {
+                return clazz.cast(new io.realm.com_zamba_testchat_models_MessageRealmProxy());
             }
             if (clazz.equals(com.zamba.testchat.models.Chat.class)) {
                 return clazz.cast(new io.realm.com_zamba_testchat_models_ChatRealmProxy());
@@ -122,17 +122,17 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
             if (clazz.equals(com.zamba.testchat.models.Group.class)) {
                 return clazz.cast(new io.realm.com_zamba_testchat_models_GroupRealmProxy());
             }
-            if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
-                return clazz.cast(new io.realm.com_zamba_testchat_models_LogCallRealmProxy());
-            }
-            if (clazz.equals(com.zamba.testchat.models.Message.class)) {
-                return clazz.cast(new io.realm.com_zamba_testchat_models_MessageRealmProxy());
+            if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
+                return clazz.cast(new io.realm.com_zamba_testchat_models_AttachmentRealmProxy());
             }
             if (clazz.equals(com.zamba.testchat.models.MyString.class)) {
                 return clazz.cast(new io.realm.com_zamba_testchat_models_MyStringRealmProxy());
             }
             if (clazz.equals(com.zamba.testchat.models.User.class)) {
                 return clazz.cast(new io.realm.com_zamba_testchat_models_UserRealmProxy());
+            }
+            if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
+                return clazz.cast(new io.realm.com_zamba_testchat_models_LogCallRealmProxy());
             }
             throw getMissingProxyClassException(clazz);
         } finally {
@@ -151,9 +151,9 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
         // generated by RealmProxy or the original type extending directly from RealmObject
         @SuppressWarnings("unchecked") Class<E> clazz = (Class<E>) ((obj instanceof RealmObjectProxy) ? obj.getClass().getSuperclass() : obj.getClass());
 
-        if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
-            com_zamba_testchat_models_AttachmentRealmProxy.AttachmentColumnInfo columnInfo = (com_zamba_testchat_models_AttachmentRealmProxy.AttachmentColumnInfo) realm.getSchema().getColumnInfo(com.zamba.testchat.models.Attachment.class);
-            return clazz.cast(io.realm.com_zamba_testchat_models_AttachmentRealmProxy.copyOrUpdate(realm, columnInfo, (com.zamba.testchat.models.Attachment) obj, update, cache, flags));
+        if (clazz.equals(com.zamba.testchat.models.Message.class)) {
+            com_zamba_testchat_models_MessageRealmProxy.MessageColumnInfo columnInfo = (com_zamba_testchat_models_MessageRealmProxy.MessageColumnInfo) realm.getSchema().getColumnInfo(com.zamba.testchat.models.Message.class);
+            return clazz.cast(io.realm.com_zamba_testchat_models_MessageRealmProxy.copyOrUpdate(realm, columnInfo, (com.zamba.testchat.models.Message) obj, update, cache, flags));
         }
         if (clazz.equals(com.zamba.testchat.models.Chat.class)) {
             com_zamba_testchat_models_ChatRealmProxy.ChatColumnInfo columnInfo = (com_zamba_testchat_models_ChatRealmProxy.ChatColumnInfo) realm.getSchema().getColumnInfo(com.zamba.testchat.models.Chat.class);
@@ -163,13 +163,9 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
             com_zamba_testchat_models_GroupRealmProxy.GroupColumnInfo columnInfo = (com_zamba_testchat_models_GroupRealmProxy.GroupColumnInfo) realm.getSchema().getColumnInfo(com.zamba.testchat.models.Group.class);
             return clazz.cast(io.realm.com_zamba_testchat_models_GroupRealmProxy.copyOrUpdate(realm, columnInfo, (com.zamba.testchat.models.Group) obj, update, cache, flags));
         }
-        if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
-            com_zamba_testchat_models_LogCallRealmProxy.LogCallColumnInfo columnInfo = (com_zamba_testchat_models_LogCallRealmProxy.LogCallColumnInfo) realm.getSchema().getColumnInfo(com.zamba.testchat.models.LogCall.class);
-            return clazz.cast(io.realm.com_zamba_testchat_models_LogCallRealmProxy.copyOrUpdate(realm, columnInfo, (com.zamba.testchat.models.LogCall) obj, update, cache, flags));
-        }
-        if (clazz.equals(com.zamba.testchat.models.Message.class)) {
-            com_zamba_testchat_models_MessageRealmProxy.MessageColumnInfo columnInfo = (com_zamba_testchat_models_MessageRealmProxy.MessageColumnInfo) realm.getSchema().getColumnInfo(com.zamba.testchat.models.Message.class);
-            return clazz.cast(io.realm.com_zamba_testchat_models_MessageRealmProxy.copyOrUpdate(realm, columnInfo, (com.zamba.testchat.models.Message) obj, update, cache, flags));
+        if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
+            com_zamba_testchat_models_AttachmentRealmProxy.AttachmentColumnInfo columnInfo = (com_zamba_testchat_models_AttachmentRealmProxy.AttachmentColumnInfo) realm.getSchema().getColumnInfo(com.zamba.testchat.models.Attachment.class);
+            return clazz.cast(io.realm.com_zamba_testchat_models_AttachmentRealmProxy.copyOrUpdate(realm, columnInfo, (com.zamba.testchat.models.Attachment) obj, update, cache, flags));
         }
         if (clazz.equals(com.zamba.testchat.models.MyString.class)) {
             com_zamba_testchat_models_MyStringRealmProxy.MyStringColumnInfo columnInfo = (com_zamba_testchat_models_MyStringRealmProxy.MyStringColumnInfo) realm.getSchema().getColumnInfo(com.zamba.testchat.models.MyString.class);
@@ -178,6 +174,10 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
         if (clazz.equals(com.zamba.testchat.models.User.class)) {
             com_zamba_testchat_models_UserRealmProxy.UserColumnInfo columnInfo = (com_zamba_testchat_models_UserRealmProxy.UserColumnInfo) realm.getSchema().getColumnInfo(com.zamba.testchat.models.User.class);
             return clazz.cast(io.realm.com_zamba_testchat_models_UserRealmProxy.copyOrUpdate(realm, columnInfo, (com.zamba.testchat.models.User) obj, update, cache, flags));
+        }
+        if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
+            com_zamba_testchat_models_LogCallRealmProxy.LogCallColumnInfo columnInfo = (com_zamba_testchat_models_LogCallRealmProxy.LogCallColumnInfo) realm.getSchema().getColumnInfo(com.zamba.testchat.models.LogCall.class);
+            return clazz.cast(io.realm.com_zamba_testchat_models_LogCallRealmProxy.copyOrUpdate(realm, columnInfo, (com.zamba.testchat.models.LogCall) obj, update, cache, flags));
         }
         throw getMissingProxyClassException(clazz);
     }
@@ -188,20 +188,20 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
         // generated by RealmProxy or the original type extending directly from RealmObject
         @SuppressWarnings("unchecked") Class<RealmModel> clazz = (Class<RealmModel>) ((object instanceof RealmObjectProxy) ? object.getClass().getSuperclass() : object.getClass());
 
-        if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
-            io.realm.com_zamba_testchat_models_AttachmentRealmProxy.insert(realm, (com.zamba.testchat.models.Attachment) object, cache);
+        if (clazz.equals(com.zamba.testchat.models.Message.class)) {
+            io.realm.com_zamba_testchat_models_MessageRealmProxy.insert(realm, (com.zamba.testchat.models.Message) object, cache);
         } else if (clazz.equals(com.zamba.testchat.models.Chat.class)) {
             io.realm.com_zamba_testchat_models_ChatRealmProxy.insert(realm, (com.zamba.testchat.models.Chat) object, cache);
         } else if (clazz.equals(com.zamba.testchat.models.Group.class)) {
             io.realm.com_zamba_testchat_models_GroupRealmProxy.insert(realm, (com.zamba.testchat.models.Group) object, cache);
-        } else if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
-            io.realm.com_zamba_testchat_models_LogCallRealmProxy.insert(realm, (com.zamba.testchat.models.LogCall) object, cache);
-        } else if (clazz.equals(com.zamba.testchat.models.Message.class)) {
-            io.realm.com_zamba_testchat_models_MessageRealmProxy.insert(realm, (com.zamba.testchat.models.Message) object, cache);
+        } else if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
+            io.realm.com_zamba_testchat_models_AttachmentRealmProxy.insert(realm, (com.zamba.testchat.models.Attachment) object, cache);
         } else if (clazz.equals(com.zamba.testchat.models.MyString.class)) {
             io.realm.com_zamba_testchat_models_MyStringRealmProxy.insert(realm, (com.zamba.testchat.models.MyString) object, cache);
         } else if (clazz.equals(com.zamba.testchat.models.User.class)) {
             io.realm.com_zamba_testchat_models_UserRealmProxy.insert(realm, (com.zamba.testchat.models.User) object, cache);
+        } else if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
+            io.realm.com_zamba_testchat_models_LogCallRealmProxy.insert(realm, (com.zamba.testchat.models.LogCall) object, cache);
         } else {
             throw getMissingProxyClassException(clazz);
         }
@@ -219,38 +219,38 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
             // generated by RealmProxy or the original type extending directly from RealmObject
             @SuppressWarnings("unchecked") Class<RealmModel> clazz = (Class<RealmModel>) ((object instanceof RealmObjectProxy) ? object.getClass().getSuperclass() : object.getClass());
 
-            if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
-                io.realm.com_zamba_testchat_models_AttachmentRealmProxy.insert(realm, (com.zamba.testchat.models.Attachment) object, cache);
+            if (clazz.equals(com.zamba.testchat.models.Message.class)) {
+                io.realm.com_zamba_testchat_models_MessageRealmProxy.insert(realm, (com.zamba.testchat.models.Message) object, cache);
             } else if (clazz.equals(com.zamba.testchat.models.Chat.class)) {
                 io.realm.com_zamba_testchat_models_ChatRealmProxy.insert(realm, (com.zamba.testchat.models.Chat) object, cache);
             } else if (clazz.equals(com.zamba.testchat.models.Group.class)) {
                 io.realm.com_zamba_testchat_models_GroupRealmProxy.insert(realm, (com.zamba.testchat.models.Group) object, cache);
-            } else if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
-                io.realm.com_zamba_testchat_models_LogCallRealmProxy.insert(realm, (com.zamba.testchat.models.LogCall) object, cache);
-            } else if (clazz.equals(com.zamba.testchat.models.Message.class)) {
-                io.realm.com_zamba_testchat_models_MessageRealmProxy.insert(realm, (com.zamba.testchat.models.Message) object, cache);
+            } else if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
+                io.realm.com_zamba_testchat_models_AttachmentRealmProxy.insert(realm, (com.zamba.testchat.models.Attachment) object, cache);
             } else if (clazz.equals(com.zamba.testchat.models.MyString.class)) {
                 io.realm.com_zamba_testchat_models_MyStringRealmProxy.insert(realm, (com.zamba.testchat.models.MyString) object, cache);
             } else if (clazz.equals(com.zamba.testchat.models.User.class)) {
                 io.realm.com_zamba_testchat_models_UserRealmProxy.insert(realm, (com.zamba.testchat.models.User) object, cache);
+            } else if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
+                io.realm.com_zamba_testchat_models_LogCallRealmProxy.insert(realm, (com.zamba.testchat.models.LogCall) object, cache);
             } else {
                 throw getMissingProxyClassException(clazz);
             }
             if (iterator.hasNext()) {
-                if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
-                    io.realm.com_zamba_testchat_models_AttachmentRealmProxy.insert(realm, iterator, cache);
+                if (clazz.equals(com.zamba.testchat.models.Message.class)) {
+                    io.realm.com_zamba_testchat_models_MessageRealmProxy.insert(realm, iterator, cache);
                 } else if (clazz.equals(com.zamba.testchat.models.Chat.class)) {
                     io.realm.com_zamba_testchat_models_ChatRealmProxy.insert(realm, iterator, cache);
                 } else if (clazz.equals(com.zamba.testchat.models.Group.class)) {
                     io.realm.com_zamba_testchat_models_GroupRealmProxy.insert(realm, iterator, cache);
-                } else if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
-                    io.realm.com_zamba_testchat_models_LogCallRealmProxy.insert(realm, iterator, cache);
-                } else if (clazz.equals(com.zamba.testchat.models.Message.class)) {
-                    io.realm.com_zamba_testchat_models_MessageRealmProxy.insert(realm, iterator, cache);
+                } else if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
+                    io.realm.com_zamba_testchat_models_AttachmentRealmProxy.insert(realm, iterator, cache);
                 } else if (clazz.equals(com.zamba.testchat.models.MyString.class)) {
                     io.realm.com_zamba_testchat_models_MyStringRealmProxy.insert(realm, iterator, cache);
                 } else if (clazz.equals(com.zamba.testchat.models.User.class)) {
                     io.realm.com_zamba_testchat_models_UserRealmProxy.insert(realm, iterator, cache);
+                } else if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
+                    io.realm.com_zamba_testchat_models_LogCallRealmProxy.insert(realm, iterator, cache);
                 } else {
                     throw getMissingProxyClassException(clazz);
                 }
@@ -264,20 +264,20 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
         // generated by RealmProxy or the original type extending directly from RealmObject
         @SuppressWarnings("unchecked") Class<RealmModel> clazz = (Class<RealmModel>) ((obj instanceof RealmObjectProxy) ? obj.getClass().getSuperclass() : obj.getClass());
 
-        if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
-            io.realm.com_zamba_testchat_models_AttachmentRealmProxy.insertOrUpdate(realm, (com.zamba.testchat.models.Attachment) obj, cache);
+        if (clazz.equals(com.zamba.testchat.models.Message.class)) {
+            io.realm.com_zamba_testchat_models_MessageRealmProxy.insertOrUpdate(realm, (com.zamba.testchat.models.Message) obj, cache);
         } else if (clazz.equals(com.zamba.testchat.models.Chat.class)) {
             io.realm.com_zamba_testchat_models_ChatRealmProxy.insertOrUpdate(realm, (com.zamba.testchat.models.Chat) obj, cache);
         } else if (clazz.equals(com.zamba.testchat.models.Group.class)) {
             io.realm.com_zamba_testchat_models_GroupRealmProxy.insertOrUpdate(realm, (com.zamba.testchat.models.Group) obj, cache);
-        } else if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
-            io.realm.com_zamba_testchat_models_LogCallRealmProxy.insertOrUpdate(realm, (com.zamba.testchat.models.LogCall) obj, cache);
-        } else if (clazz.equals(com.zamba.testchat.models.Message.class)) {
-            io.realm.com_zamba_testchat_models_MessageRealmProxy.insertOrUpdate(realm, (com.zamba.testchat.models.Message) obj, cache);
+        } else if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
+            io.realm.com_zamba_testchat_models_AttachmentRealmProxy.insertOrUpdate(realm, (com.zamba.testchat.models.Attachment) obj, cache);
         } else if (clazz.equals(com.zamba.testchat.models.MyString.class)) {
             io.realm.com_zamba_testchat_models_MyStringRealmProxy.insertOrUpdate(realm, (com.zamba.testchat.models.MyString) obj, cache);
         } else if (clazz.equals(com.zamba.testchat.models.User.class)) {
             io.realm.com_zamba_testchat_models_UserRealmProxy.insertOrUpdate(realm, (com.zamba.testchat.models.User) obj, cache);
+        } else if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
+            io.realm.com_zamba_testchat_models_LogCallRealmProxy.insertOrUpdate(realm, (com.zamba.testchat.models.LogCall) obj, cache);
         } else {
             throw getMissingProxyClassException(clazz);
         }
@@ -295,38 +295,38 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
             // generated by RealmProxy or the original type extending directly from RealmObject
             @SuppressWarnings("unchecked") Class<RealmModel> clazz = (Class<RealmModel>) ((object instanceof RealmObjectProxy) ? object.getClass().getSuperclass() : object.getClass());
 
-            if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
-                io.realm.com_zamba_testchat_models_AttachmentRealmProxy.insertOrUpdate(realm, (com.zamba.testchat.models.Attachment) object, cache);
+            if (clazz.equals(com.zamba.testchat.models.Message.class)) {
+                io.realm.com_zamba_testchat_models_MessageRealmProxy.insertOrUpdate(realm, (com.zamba.testchat.models.Message) object, cache);
             } else if (clazz.equals(com.zamba.testchat.models.Chat.class)) {
                 io.realm.com_zamba_testchat_models_ChatRealmProxy.insertOrUpdate(realm, (com.zamba.testchat.models.Chat) object, cache);
             } else if (clazz.equals(com.zamba.testchat.models.Group.class)) {
                 io.realm.com_zamba_testchat_models_GroupRealmProxy.insertOrUpdate(realm, (com.zamba.testchat.models.Group) object, cache);
-            } else if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
-                io.realm.com_zamba_testchat_models_LogCallRealmProxy.insertOrUpdate(realm, (com.zamba.testchat.models.LogCall) object, cache);
-            } else if (clazz.equals(com.zamba.testchat.models.Message.class)) {
-                io.realm.com_zamba_testchat_models_MessageRealmProxy.insertOrUpdate(realm, (com.zamba.testchat.models.Message) object, cache);
+            } else if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
+                io.realm.com_zamba_testchat_models_AttachmentRealmProxy.insertOrUpdate(realm, (com.zamba.testchat.models.Attachment) object, cache);
             } else if (clazz.equals(com.zamba.testchat.models.MyString.class)) {
                 io.realm.com_zamba_testchat_models_MyStringRealmProxy.insertOrUpdate(realm, (com.zamba.testchat.models.MyString) object, cache);
             } else if (clazz.equals(com.zamba.testchat.models.User.class)) {
                 io.realm.com_zamba_testchat_models_UserRealmProxy.insertOrUpdate(realm, (com.zamba.testchat.models.User) object, cache);
+            } else if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
+                io.realm.com_zamba_testchat_models_LogCallRealmProxy.insertOrUpdate(realm, (com.zamba.testchat.models.LogCall) object, cache);
             } else {
                 throw getMissingProxyClassException(clazz);
             }
             if (iterator.hasNext()) {
-                if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
-                    io.realm.com_zamba_testchat_models_AttachmentRealmProxy.insertOrUpdate(realm, iterator, cache);
+                if (clazz.equals(com.zamba.testchat.models.Message.class)) {
+                    io.realm.com_zamba_testchat_models_MessageRealmProxy.insertOrUpdate(realm, iterator, cache);
                 } else if (clazz.equals(com.zamba.testchat.models.Chat.class)) {
                     io.realm.com_zamba_testchat_models_ChatRealmProxy.insertOrUpdate(realm, iterator, cache);
                 } else if (clazz.equals(com.zamba.testchat.models.Group.class)) {
                     io.realm.com_zamba_testchat_models_GroupRealmProxy.insertOrUpdate(realm, iterator, cache);
-                } else if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
-                    io.realm.com_zamba_testchat_models_LogCallRealmProxy.insertOrUpdate(realm, iterator, cache);
-                } else if (clazz.equals(com.zamba.testchat.models.Message.class)) {
-                    io.realm.com_zamba_testchat_models_MessageRealmProxy.insertOrUpdate(realm, iterator, cache);
+                } else if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
+                    io.realm.com_zamba_testchat_models_AttachmentRealmProxy.insertOrUpdate(realm, iterator, cache);
                 } else if (clazz.equals(com.zamba.testchat.models.MyString.class)) {
                     io.realm.com_zamba_testchat_models_MyStringRealmProxy.insertOrUpdate(realm, iterator, cache);
                 } else if (clazz.equals(com.zamba.testchat.models.User.class)) {
                     io.realm.com_zamba_testchat_models_UserRealmProxy.insertOrUpdate(realm, iterator, cache);
+                } else if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
+                    io.realm.com_zamba_testchat_models_LogCallRealmProxy.insertOrUpdate(realm, iterator, cache);
                 } else {
                     throw getMissingProxyClassException(clazz);
                 }
@@ -339,8 +339,8 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
         throws JSONException {
         checkClass(clazz);
 
-        if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
-            return clazz.cast(io.realm.com_zamba_testchat_models_AttachmentRealmProxy.createOrUpdateUsingJsonObject(realm, json, update));
+        if (clazz.equals(com.zamba.testchat.models.Message.class)) {
+            return clazz.cast(io.realm.com_zamba_testchat_models_MessageRealmProxy.createOrUpdateUsingJsonObject(realm, json, update));
         }
         if (clazz.equals(com.zamba.testchat.models.Chat.class)) {
             return clazz.cast(io.realm.com_zamba_testchat_models_ChatRealmProxy.createOrUpdateUsingJsonObject(realm, json, update));
@@ -348,17 +348,17 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
         if (clazz.equals(com.zamba.testchat.models.Group.class)) {
             return clazz.cast(io.realm.com_zamba_testchat_models_GroupRealmProxy.createOrUpdateUsingJsonObject(realm, json, update));
         }
-        if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
-            return clazz.cast(io.realm.com_zamba_testchat_models_LogCallRealmProxy.createOrUpdateUsingJsonObject(realm, json, update));
-        }
-        if (clazz.equals(com.zamba.testchat.models.Message.class)) {
-            return clazz.cast(io.realm.com_zamba_testchat_models_MessageRealmProxy.createOrUpdateUsingJsonObject(realm, json, update));
+        if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
+            return clazz.cast(io.realm.com_zamba_testchat_models_AttachmentRealmProxy.createOrUpdateUsingJsonObject(realm, json, update));
         }
         if (clazz.equals(com.zamba.testchat.models.MyString.class)) {
             return clazz.cast(io.realm.com_zamba_testchat_models_MyStringRealmProxy.createOrUpdateUsingJsonObject(realm, json, update));
         }
         if (clazz.equals(com.zamba.testchat.models.User.class)) {
             return clazz.cast(io.realm.com_zamba_testchat_models_UserRealmProxy.createOrUpdateUsingJsonObject(realm, json, update));
+        }
+        if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
+            return clazz.cast(io.realm.com_zamba_testchat_models_LogCallRealmProxy.createOrUpdateUsingJsonObject(realm, json, update));
         }
         throw getMissingProxyClassException(clazz);
     }
@@ -368,8 +368,8 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
         throws IOException {
         checkClass(clazz);
 
-        if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
-            return clazz.cast(io.realm.com_zamba_testchat_models_AttachmentRealmProxy.createUsingJsonStream(realm, reader));
+        if (clazz.equals(com.zamba.testchat.models.Message.class)) {
+            return clazz.cast(io.realm.com_zamba_testchat_models_MessageRealmProxy.createUsingJsonStream(realm, reader));
         }
         if (clazz.equals(com.zamba.testchat.models.Chat.class)) {
             return clazz.cast(io.realm.com_zamba_testchat_models_ChatRealmProxy.createUsingJsonStream(realm, reader));
@@ -377,17 +377,17 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
         if (clazz.equals(com.zamba.testchat.models.Group.class)) {
             return clazz.cast(io.realm.com_zamba_testchat_models_GroupRealmProxy.createUsingJsonStream(realm, reader));
         }
-        if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
-            return clazz.cast(io.realm.com_zamba_testchat_models_LogCallRealmProxy.createUsingJsonStream(realm, reader));
-        }
-        if (clazz.equals(com.zamba.testchat.models.Message.class)) {
-            return clazz.cast(io.realm.com_zamba_testchat_models_MessageRealmProxy.createUsingJsonStream(realm, reader));
+        if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
+            return clazz.cast(io.realm.com_zamba_testchat_models_AttachmentRealmProxy.createUsingJsonStream(realm, reader));
         }
         if (clazz.equals(com.zamba.testchat.models.MyString.class)) {
             return clazz.cast(io.realm.com_zamba_testchat_models_MyStringRealmProxy.createUsingJsonStream(realm, reader));
         }
         if (clazz.equals(com.zamba.testchat.models.User.class)) {
             return clazz.cast(io.realm.com_zamba_testchat_models_UserRealmProxy.createUsingJsonStream(realm, reader));
+        }
+        if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
+            return clazz.cast(io.realm.com_zamba_testchat_models_LogCallRealmProxy.createUsingJsonStream(realm, reader));
         }
         throw getMissingProxyClassException(clazz);
     }
@@ -398,8 +398,8 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
         // generated by RealmProxy or the original type extending directly from RealmObject
         @SuppressWarnings("unchecked") Class<E> clazz = (Class<E>) realmObject.getClass().getSuperclass();
 
-        if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
-            return clazz.cast(io.realm.com_zamba_testchat_models_AttachmentRealmProxy.createDetachedCopy((com.zamba.testchat.models.Attachment) realmObject, 0, maxDepth, cache));
+        if (clazz.equals(com.zamba.testchat.models.Message.class)) {
+            return clazz.cast(io.realm.com_zamba_testchat_models_MessageRealmProxy.createDetachedCopy((com.zamba.testchat.models.Message) realmObject, 0, maxDepth, cache));
         }
         if (clazz.equals(com.zamba.testchat.models.Chat.class)) {
             return clazz.cast(io.realm.com_zamba_testchat_models_ChatRealmProxy.createDetachedCopy((com.zamba.testchat.models.Chat) realmObject, 0, maxDepth, cache));
@@ -407,17 +407,17 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
         if (clazz.equals(com.zamba.testchat.models.Group.class)) {
             return clazz.cast(io.realm.com_zamba_testchat_models_GroupRealmProxy.createDetachedCopy((com.zamba.testchat.models.Group) realmObject, 0, maxDepth, cache));
         }
-        if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
-            return clazz.cast(io.realm.com_zamba_testchat_models_LogCallRealmProxy.createDetachedCopy((com.zamba.testchat.models.LogCall) realmObject, 0, maxDepth, cache));
-        }
-        if (clazz.equals(com.zamba.testchat.models.Message.class)) {
-            return clazz.cast(io.realm.com_zamba_testchat_models_MessageRealmProxy.createDetachedCopy((com.zamba.testchat.models.Message) realmObject, 0, maxDepth, cache));
+        if (clazz.equals(com.zamba.testchat.models.Attachment.class)) {
+            return clazz.cast(io.realm.com_zamba_testchat_models_AttachmentRealmProxy.createDetachedCopy((com.zamba.testchat.models.Attachment) realmObject, 0, maxDepth, cache));
         }
         if (clazz.equals(com.zamba.testchat.models.MyString.class)) {
             return clazz.cast(io.realm.com_zamba_testchat_models_MyStringRealmProxy.createDetachedCopy((com.zamba.testchat.models.MyString) realmObject, 0, maxDepth, cache));
         }
         if (clazz.equals(com.zamba.testchat.models.User.class)) {
             return clazz.cast(io.realm.com_zamba_testchat_models_UserRealmProxy.createDetachedCopy((com.zamba.testchat.models.User) realmObject, 0, maxDepth, cache));
+        }
+        if (clazz.equals(com.zamba.testchat.models.LogCall.class)) {
+            return clazz.cast(io.realm.com_zamba_testchat_models_LogCallRealmProxy.createDetachedCopy((com.zamba.testchat.models.LogCall) realmObject, 0, maxDepth, cache));
         }
         throw getMissingProxyClassException(clazz);
     }

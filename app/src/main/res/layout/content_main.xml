@@ -73,19 +73,7 @@
                     android:src="@drawable/ic_delete_24dp" />
             </RelativeLayout>
         </FrameLayout>
-        <RelativeLayout
-            android:background="@color/colorPrimary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/data_btn"
-                android:layout_alignParentRight="true"
 
-                android:text="Upload "
-                android:textColor="@color/colorPrimary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"></Button>
-        </RelativeLayout>
         <android.support.design.widget.TabLayout
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"

