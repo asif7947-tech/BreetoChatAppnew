@@ -1,0 +1,106 @@
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+apply plugin: 'realm-android'
+
+repositories {
+    google()
+    flatDir {
+        dirs 'libs'
+    }
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+android {
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId 'com.zamba.testchat'
+
+        resValue 'string', "app_name", "Berreto Messenger"
+        resValue 'string', "support_email", "paktechfight@gmail.com"
+        resValue 'string', "geo_api_key", "AIzaSyA3ccogA4ezAoVP5iMQFHDcFwvoS25xKI8"
+        resValue 'string', "admob_app_id", "ca-app-pub-3522438344040654~2270036666"
+        resValue 'string', "admob_banner_id", "ca-app-pub-3522438344040654/5965739093"
+        resValue 'string', "sinch_app_key", "dd9b9f03-8e86-4694-9c47-e0e38f323b0e"
+        resValue 'string', "sinch_app_secret", "uYHmAVs3bUeziMwGLZEGeA=="
+        resValue 'string', "sinch_app_environment", "clientapi.sinch.com"
+        resValue 'string', "authority", applicationId + ".fileprovider"
+
+        resValue 'color', "colorPrimary", "#FFA835E2"
+        resValue 'color', "colorPrimaryDark", "#FF884D9E"
+        resValue 'color', "colorAccent", "#9533e5"
+
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 34
+        versionName "5.2.3"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+    buildToolsVersion '28.0.3'
+}
+
+buildscript {
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+
+    repositories {
+        mavenCentral()
+        maven { url 'https://maven.fabric.io/public' }
+    }
+}
+
+dependencies {
+    implementation(name: 'sinch-android-rtc', version: '+', ext: 'aar')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation('com.googlecode.ez-vcard:ez-vcard:0.10.4') {
+        exclude group: 'org.freemarker'
+    }
+    implementation 'com.android.support:multidex:1.0.3'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+
+    //noinspection GradleCompatible
+    implementation 'com.android.support:customtabs:27.1.1'
+
+    implementation 'com.linsea:universalvideoview:1.1.0@aar'
+
+    implementation 'com.google.firebase:firebase-core:16.0.4'
+    implementation 'com.google.firebase:firebase-database:16.0.4'
+    implementation 'com.google.firebase:firebase-storage:16.0.4'
+    implementation 'com.google.firebase:firebase-ads:17.0.0'
+    implementation 'com.google.firebase:firebase-auth:16.0.5'
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
+    implementation 'com.google.android.gms:play-services-places:16.0.0'
+
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'com.eyalbira.loadingdots:loading-dots:1.0.2'
+    implementation 'com.iceteck.silicompressorr:silicompressor:2.1'
+    implementation 'com.kbeanie:multipicker:1.5@aar'
+    implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+    implementation 'com.vanniktech:emoji-google:0.5.1'
+    implementation 'com.mxn.soul:flowingdrawer-core:2.0.0'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    implementation 'com.android.support.constraint:constraint-layout:2.0.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
+}
+
+apply plugin: 'com.google.gms.google-services'

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Automatically generated file. DO NOT MODIFY -->
+
+    <!-- Values from default config. -->
+    <string name="admob_app_id" translatable="false">ca-app-pub-3522438344040654~2270036666</string>
+    <string name="admob_banner_id" translatable="false">ca-app-pub-3522438344040654/5965739093</string>
+    <string name="app_name" translatable="false">Berreto Messenger</string>
+    <string name="authority" translatable="false">com.zamba.testchat.fileprovider</string>
+
+    <color name="colorAccent">#9533e5</color>
+    <color name="colorPrimary">#FFA835E2</color>
+    <color name="colorPrimaryDark">#FF884D9E</color>
+
+    <string name="geo_api_key" translatable="false">AIzaSyA3ccogA4ezAoVP5iMQFHDcFwvoS25xKI8</string>
+    <string name="sinch_app_environment" translatable="false">clientapi.sinch.com</string>
+    <string name="sinch_app_key" translatable="false">dd9b9f03-8e86-4694-9c47-e0e38f323b0e</string>
+    <string name="sinch_app_secret" translatable="false">uYHmAVs3bUeziMwGLZEGeA==</string>
+    <string name="support_email" translatable="false">paktechfight@gmail.com</string>
+
+</resources>

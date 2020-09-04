@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">81730518041-43bs8573hsj47k3tjsjcvqv2rdovdopi.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://yootest-63bc7.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">81730518041</string>
+    <string name="google_api_key" translatable="false">AIzaSyDGk8Ea7TIy0PbtcHKaA7JJrSX7uUgKgl4</string>
+    <string name="google_app_id" translatable="false">1:81730518041:android:186c6267ac7d8e9dd37e88</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDGk8Ea7TIy0PbtcHKaA7JJrSX7uUgKgl4</string>
+    <string name="google_storage_bucket" translatable="false">yootest-63bc7.appspot.com</string>
+    <string name="project_id" translatable="false">yootest-63bc7</string>
+</resources>
