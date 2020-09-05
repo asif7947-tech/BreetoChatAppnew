@@ -1954,38 +1954,6 @@
             ]
         },
         {
-            "outputFile": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\values-v24_values-v24.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\Asif Malik\\.gradle\\caches\\transforms-2\\files-2.1\\fcd3bfb1320e93c25c6653ab9e83bc32\\support-media-compat-26.1.0\\res\\values-v24\\values-v24.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,121,182,248",
-                        "endColumns": "65,60,65,66",
-                        "endOffsets": "116,177,243,310"
-                    },
-                    "to": {
-                        "startLines": "4,5,6,7",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "347,413,474,540",
-                        "endColumns": "65,60,65,66",
-                        "endOffsets": "408,469,535,602"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Asif Malik\\.gradle\\caches\\transforms-2\\files-2.1\\89c98c9f760e03a80ebce6a080a6b034\\appcompat-v7-28.0.0\\res\\values-v24\\values-v24.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,212",
-                        "endColumns": "156,134",
-                        "endOffsets": "207,342"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\values-ja_values-ja.arsc.flat",
             "map": [
                 {
@@ -2105,6 +2073,38 @@
                         "startOffsets": "3769",
                         "endColumns": "180",
                         "endOffsets": "3945"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\values-v24_values-v24.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Asif Malik\\.gradle\\caches\\transforms-2\\files-2.1\\fcd3bfb1320e93c25c6653ab9e83bc32\\support-media-compat-26.1.0\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,121,182,248",
+                        "endColumns": "65,60,65,66",
+                        "endOffsets": "116,177,243,310"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,7",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "347,413,474,540",
+                        "endColumns": "65,60,65,66",
+                        "endOffsets": "408,469,535,602"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Asif Malik\\.gradle\\caches\\transforms-2\\files-2.1\\89c98c9f760e03a80ebce6a080a6b034\\appcompat-v7-28.0.0\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
                     }
                 }
             ]

@@ -3938,6 +3938,7 @@ id searchQuery
 id search_badge
 id search_bar
 id search_button
+id search_by_username
 id search_close_btn
 id search_edit_frame
 id search_go_btn

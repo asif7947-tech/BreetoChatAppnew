@@ -40,12 +40,12 @@
         "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_keyboard_arrow_left_white_24dp.xml"
     },
     {
-        "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_volume_off_white_24dp.xml.flat",
-        "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_volume_off_white_24dp.xml"
-    },
-    {
         "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_share.png.flat",
         "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_share.png"
+    },
+    {
+        "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_volume_off_white_24dp.xml.flat",
+        "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_volume_off_white_24dp.xml"
     },
     {
         "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_power_settings_new_dark_24dp.png.flat",
@@ -60,12 +60,12 @@
         "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\src\\main\\res\\layout\\activity_admin_chat.xml"
     },
     {
-        "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\raw_phone_loud1.mp3.flat",
-        "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\src\\main\\res\\raw\\phone_loud1.mp3"
-    },
-    {
         "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_file_download_40dp.png.flat",
         "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_file_download_40dp.png"
+    },
+    {
+        "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\raw_phone_loud1.mp3.flat",
+        "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\src\\main\\res\\raw\\phone_loud1.mp3"
     },
     {
         "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_people_white_24dp.png.flat",
@@ -104,24 +104,24 @@
         "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\src\\main\\res\\layout\\activity_gallery.xml"
     },
     {
-        "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_mic_off_white_24dp.png.flat",
-        "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_mic_off_white_24dp.png"
-    },
-    {
         "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mylocation.png.flat",
         "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\src\\main\\res\\drawable\\mylocation.png"
+    },
+    {
+        "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_mic_off_white_24dp.png.flat",
+        "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_mic_off_white_24dp.png"
     },
     {
         "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_message_attachment_location.xml.flat",
         "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\src\\main\\res\\layout\\item_message_attachment_location.xml"
     },
     {
-        "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_keyboard_arrow_left_white_36dp.xml.flat",
-        "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_keyboard_arrow_left_white_36dp.xml"
-    },
-    {
         "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_v_card_detail.xml.flat",
         "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\src\\main\\res\\layout\\dialog_v_card_detail.xml"
+    },
+    {
+        "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_keyboard_arrow_left_white_36dp.xml.flat",
+        "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_keyboard_arrow_left_white_36dp.xml"
     },
     {
         "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_forward_24dp.png.flat",
@@ -144,24 +144,24 @@
         "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\src\\main\\res\\layout\\activity_map.xml"
     },
     {
-        "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_round_red_hangup.xml.flat",
-        "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\src\\main\\res\\drawable\\round_red_hangup.xml"
-    },
-    {
         "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_remove_circle_outline_dark_24dp.png.flat",
         "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_remove_circle_outline_dark_24dp.png"
+    },
+    {
+        "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_round_red_hangup.xml.flat",
+        "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\src\\main\\res\\drawable\\round_red_hangup.xml"
     },
     {
         "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_camera_white.png.flat",
         "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_camera_white.png"
     },
     {
-        "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_switch_camera_white_24dp.xml.flat",
-        "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_switch_camera_white_24dp.xml"
-    },
-    {
         "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_add.xml.flat",
         "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_add.xml"
+    },
+    {
+        "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_switch_camera_white_24dp.xml.flat",
+        "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_switch_camera_white_24dp.xml"
     },
     {
         "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_assignment_dark_24dp.png.flat",
@@ -208,12 +208,12 @@
         "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\src\\main\\res\\layout\\fragment_confirmation.xml"
     },
     {
-        "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\layout_video_adapter_layout.xml.flat",
-        "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\src\\main\\res\\layout\\video_adapter_layout.xml"
-    },
-    {
         "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_thumb_up_dark_24dp.png.flat",
         "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_thumb_up_dark_24dp.png"
+    },
+    {
+        "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\layout_video_adapter_layout.xml.flat",
+        "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\src\\main\\res\\layout\\video_adapter_layout.xml"
     },
     {
         "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_call_white_24dp.png.flat",
@@ -224,12 +224,12 @@
         "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_image.png"
     },
     {
-        "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_share.png.flat",
-        "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_share.png"
-    },
-    {
         "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_message_24dp.png.flat",
         "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_message_24dp.png"
+    },
+    {
+        "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_share.png.flat",
+        "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_share.png"
     },
     {
         "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\font_roboto_bold.ttf.flat",
@@ -256,12 +256,12 @@
         "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_delete_24dp.png"
     },
     {
-        "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_add_circle.png.flat",
-        "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_add_circle.png"
-    },
-    {
         "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_play_circle_outline.xml.flat",
         "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_play_circle_outline.xml"
+    },
+    {
+        "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_add_circle.png.flat",
+        "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_add_circle.png"
     },
     {
         "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_audiotrack_24dp.png.flat",
@@ -380,12 +380,12 @@
         "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_play_circle_outline.png"
     },
     {
-        "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_call_received_24dp.xml.flat",
-        "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_call_received_24dp.xml"
-    },
-    {
         "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_insert_64dp.png.flat",
         "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_insert_64dp.png"
+    },
+    {
+        "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_call_received_24dp.xml.flat",
+        "source": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_call_received_24dp.xml"
     },
     {
         "merged": "G:\\Androidwork\\MyClientProject\\yoo_old_code\\yoo_old_code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_search.png.flat",

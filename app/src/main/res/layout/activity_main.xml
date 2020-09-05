@@ -40,11 +40,41 @@
                 android:paddingRight="16dp"
                 android:singleLine="true" />
 
+            <EditText
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_below="@+id/searchContact"
+                android:id="@+id/search_by_username"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorBg"
+                android:drawableLeft="@drawable/places_ic_search"
+                android:drawablePadding="12dp"
+                android:drawableStart="@drawable/places_ic_search"
+                android:gravity="center_vertical"
+                android:hint="search by username"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:singleLine="true" />
+
+            <ImageButton
+android:visibility="gone"
+                android:layout_below="@+id/searchContact"
+                android:id="@+id/btn_search"
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent"
+                android:tint="@color/colorPrimary"
+                app:srcCompat="@drawable/ic_search"
+                android:layout_toRightOf="@+id/search_by_username"
+                tools:ignore="VectorDrawableCompat" />
+
+
             <android.support.v4.widget.SwipeRefreshLayout
                 android:id="@+id/menu_recycler_view_swipe_refresh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/searchContact">
+                android:layout_below="@+id/search_by_username">
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/menu_recycler_view"

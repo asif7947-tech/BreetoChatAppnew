@@ -27,9 +27,11 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -108,16 +110,18 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
     private RecyclerView menuRecyclerView;
     private SwipeRefreshLayout swipeMenuRecyclerView;
     private FlowingDrawer drawerLayout;
-    private EditText searchContact;
+    private EditText searchContact,search_by_username;
     private TextView selectedCount;
     //private TextView invite;
     private RelativeLayout toolbarContainer, cabContainer;
 
     private TabLayout tabLayout;
     private SwipeControlViewPager viewPager;
-
+String  search_data="";
     private FloatingActionButton floatingActionButton;
     private CoordinatorLayout coordinatorLayout;
+
+
 
     private MenuUsersRecyclerAdapter menuUsersRecyclerAdapter;
     private HashMap<String, Contact> contactsData;
@@ -196,6 +200,69 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
         loadAdd();
 
 
+
+
+        searchContact.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+
+                if (editable.length()>0)
+                {
+                    search_by_username.setVisibility(View.GONE);
+
+                }
+                else if (editable.length()==0)
+                {
+                    search_by_username.setVisibility(View.VISIBLE);
+
+                }
+
+                search_data=editable.toString();
+                menuUsersRecyclerAdapter.getFilter().filter(editable.toString());
+            }
+        });
+        search_by_username.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+                if (editable.length()>0)
+                {
+                    searchContact.setVisibility(View.GONE);
+
+                }
+                else if (editable.length()==0)
+                {
+                    searchContact.setVisibility(View.VISIBLE);
+
+                }
+
+            }
+        });
+
+
     }
 
     private void initUi() {
@@ -205,6 +272,8 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
         swipeMenuRecyclerView = findViewById(R.id.menu_recycler_view_swipe_refresh);
         drawerLayout = findViewById(R.id.drawer_layout);
         searchContact = findViewById(R.id.searchContact);
+        search_by_username = findViewById(R.id.search_by_username);
+
         //invite = findViewById(R.id.invite);
         toolbarContainer = findViewById(R.id.toolbarContainer);
         cabContainer = findViewById(R.id.cabContainer);
@@ -256,22 +325,8 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
                 refreshMyContacts();
             }
         });
-        searchContact.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-            }
 
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                menuUsersRecyclerAdapter.getFilter().filter(editable.toString());
-            }
-        });
     }
 
     private void setProfileImage(ImageView imageView) {
