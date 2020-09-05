@@ -801,9 +801,11 @@
     <string name="add_more">+ Add more</string>
     <string name="admob_app_id" translatable="false">ca-app-pub-3522438344040654~2270036666</string>
     <string name="admob_banner_id" translatable="false">ca-app-pub-3522438344040654/5965739093</string>
+    <string name="albumFragment" translatable="false">Videos</string>
     <string name="app_name" translatable="false">Berreto Messenger</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="audio">Audio</string>
+    <string name="audioFragment" translatable="false">Audios</string>
     <string name="authority" translatable="false">com.zamba.testchat.fileprovider</string>
     <string name="back">Back</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
@@ -812,7 +814,7 @@
     <string name="change_number">Change number?</string>
     <string name="character_counter_content_description">Character limit exceeded %1$d of %2$d</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
-    <string name="com.crashlytics.android.build_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">ff053dc7-4a3b-46b0-b198-18a65b83a38d</string>
+    <string name="com.crashlytics.android.build_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">55d662d4-ffea-438f-a0b0-b6c6c8b49b38</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text"><ns2:g id="app_name">%1$s</ns2:g> won\'t work unless you enable Google Play services.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Enable Google Play services</string>
@@ -959,6 +961,7 @@
     <string name="sinch_app_key" translatable="false">dd9b9f03-8e86-4694-9c47-e0e38f323b0e</string>
     <string name="sinch_app_secret" translatable="false">uYHmAVs3bUeziMwGLZEGeA==</string>
     <string name="slide_cancel">%s (Slide left to cancel)</string>
+    <string name="songsFragment" translatable="false">Images</string>
     <string name="status">Status</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="support_email" translatable="false">paktechfight@gmail.com</string>

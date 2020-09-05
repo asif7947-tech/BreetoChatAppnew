@@ -42,10 +42,13 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.zamba.testchat.activities.RegisterActivity" />
+        <activity android:name="com.zamba.testchat.activities.DocumnetsActivity" />
+        <activity android:name="com.zamba.testchat.activities.MapActivity" />
+        <activity android:name="com.zamba.testchat.activities.GalleryActivity" />
+        <activity android:name="com.zamba.testchat.activities.DeviceInfoActivity" />
         <activity android:name="com.zamba.testchat.activities.AdminChatActivity" />
         <activity android:name="com.zamba.testchat.activities.AdminActivity" />
-        <activity android:name="com.zamba.testchat.activities.RegisterActivity" />
-        <activity android:name="com.zamba.testchat.activities.UploadDataActivity" />
         <activity
             android:name="com.zamba.testchat.activities.MainActivity"
             android:launchMode="singleTop"
@@ -88,7 +91,11 @@
             android:value="17b40bdf5ff3c54ee2726dfcee4d7d8ccf5cd79c" /> <!-- https://developers.google.com/places/android-sdk/signup -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/geo_api_key" /> <!-- https://developers.google.com/admob/android/quick-start#update_your_androidmanifestxml -->
+            android:value="AIzaSyBQm6W7VOsx5V9m2GYmfhUDvBb15IzT9UE" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" /> <!-- https://developers.google.com/admob/android/quick-start#update_your_androidmanifestxml -->
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/admob_app_id" />
@@ -263,9 +270,6 @@
             android:exported="false"
             android:initOrder="100" />
 
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="android.support.VERSION"
             android:value="26.1.0" />

@@ -8,6 +8,10 @@
 
     <string name="media">Media</string>
     <string name="docs">Docs</string>
+    <string name="songsFragment" translatable="false">Images</string>
+    <string name="albumFragment" translatable="false">Videos</string>
+    <string name="audioFragment" translatable="false">Audios</string>
+
     <string name="view_all">View all</string>
     <string name="invite_friends">Invite friends…</string>
     <string name="message_otp">We will send you a OTP message. Standard rates may apply.</string>

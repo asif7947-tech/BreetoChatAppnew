@@ -278,8 +278,6 @@ public class SignInActivity  extends AppCompatActivity {
                                         try {
 
 
-
-
                                             DataSnapshot data = items.next();
                                             Log.e(TAG," admin  "+ "data_key : " + data);
                                             String keyadmin = data.getKey();
@@ -551,10 +549,7 @@ public class SignInActivity  extends AppCompatActivity {
 
         SharedHelper.putKey(getApplicationContext(),"login_as","user");
         Intent intent=new Intent(this, RegisterActivity.class);
-
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-
-
         intent.putExtra("user_id",userMe.getId());
         startActivity(intent);
         SignInActivity.this.finish();

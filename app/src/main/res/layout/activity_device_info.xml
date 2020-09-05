@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.DeviceInfoActivity">
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:orientation="vertical">
+
+
+         <RelativeLayout
+             android:id="@+id/toolbar"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:background="@android:drawable/screen_background_dark_transparent"
+             android:padding="8dp">
+
+             <TextView
+
+                 android:layout_marginTop="20dp"
+                 android:id="@+id/brand_name"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:background="@null"
+                 android:ellipsize="end"
+                 android:inputType="text"
+                 android:singleLine="true"
+                 android:text="@string/app_name"
+                 android:textColor="@android:color/white"
+                 android:textSize="18sp"
+                 android:textStyle="bold" />
+
+             <TextView
+                 android:layout_marginTop="7dp"
+                 android:paddingBottom="10dp"
+                 android:id="@+id/model_name"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@+id/brand_name"
+                 android:background="@null"
+                 android:ellipsize="end"
+                 android:inputType="text"
+                 android:singleLine="true"
+                 android:text="Emotion"
+                 android:textColor="@android:color/white"
+                 android:textSize="16sp" />
+
+             <ImageView
+                 android:id="@+id/done"
+                 android:layout_centerVertical="true"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentEnd="true"
+                 android:layout_alignParentRight="true"
+                 android:padding="4dp"
+                 android:src="@drawable/ic_keyboard_arrow_right_white_24dp" />
+         </RelativeLayout>
+         <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:id="@+id/userDetailContainer"
+             android:layout_marginTop="10dp"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:fillViewport="true"
+             android:visibility="visible"
+             app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+         <LinearLayout
+             android:layout_marginLeft="10dp"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical">
+
+
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical"> <View
+             android:layout_width="match_parent"
+             android:layout_height="0.5dp"
+             android:layout_marginBottom="14dp"
+             android:layout_marginTop="14dp"
+             android:background="@color/textColorSecondary" />
+
+             <TextView
+                 android:layout_marginTop="10dp"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:textSize="18sp"
+                 android:textStyle="bold"
+                 android:textColor="@color/cardview_dark_background"
+                 android:text="Android version" />
+
+             <TextView
+                 android:layout_marginTop="8dp"
+                 android:id="@+id/version"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:gravity="center_vertical"
+                 android:textColor="@color/textColor0"
+                 android:textSize="16sp" />
+
+             <View
+                 android:layout_width="match_parent"
+                 android:layout_height="0.5dp"
+                 android:layout_marginBottom="14dp"
+                 android:layout_marginTop="14dp"
+                 android:background="@color/textColorSecondary" />
+
+         </LinearLayout>
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:textSize="18sp"
+                 android:textStyle="bold"
+                 android:textColor="@color/cardview_dark_background"
+                 android:text="hardware_value" />
+
+             <TextView
+                 android:layout_marginTop="8dp"
+                 android:id="@+id/hardware_value"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:gravity="center_vertical"
+                 android:textColor="@color/textColor0"
+                 android:textSize="16sp" />
+
+             <View
+                 android:layout_width="match_parent"
+                 android:layout_height="0.5dp"
+                 android:layout_marginBottom="14dp"
+                 android:layout_marginTop="14dp"
+                 android:background="@color/textColorSecondary" />
+
+         </LinearLayout>
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:textSize="18sp"
+                 android:textStyle="bold"
+                 android:textColor="@color/cardview_dark_background"
+                 android:text="build_ID" />
+
+             <TextView
+                 android:layout_marginTop="8dp"
+                 android:id="@+id/build_ID"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:gravity="center_vertical"
+                 android:textColor="@color/textColor0"
+                 android:textSize="16sp" />
+
+             <View
+                 android:layout_width="match_parent"
+                 android:layout_height="0.5dp"
+                 android:layout_marginBottom="14dp"
+                 android:layout_marginTop="14dp"
+                 android:background="@color/textColorSecondary" />
+
+         </LinearLayout>
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:textSize="18sp"
+                 android:textStyle="bold"
+                 android:textColor="@color/cardview_dark_background"
+                 android:text="board_value" />
+
+             <TextView
+                 android:layout_marginTop="8dp"
+                 android:id="@+id/board_value"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:gravity="center_vertical"
+                 android:textColor="@color/textColor0"
+                 android:textSize="16sp" />
+
+             <View
+                 android:layout_width="match_parent"
+                 android:layout_height="0.5dp"
+                 android:layout_marginBottom="14dp"
+                 android:layout_marginTop="14dp"
+                 android:background="@color/textColorSecondary" />
+
+         </LinearLayout>
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:textSize="18sp"
+                 android:textStyle="bold"
+                 android:textColor="@color/cardview_dark_background"
+                 android:text="api_level" />
+
+             <TextView
+                 android:layout_marginTop="8dp"
+                 android:id="@+id/api_level"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:gravity="center_vertical"
+                 android:textColor="@color/textColor0"
+                 android:textSize="16sp" />
+
+             <View
+                 android:layout_width="match_parent"
+                 android:layout_height="0.5dp"
+                 android:layout_marginBottom="14dp"
+                 android:layout_marginTop="14dp"
+                 android:background="@color/textColorSecondary" />
+
+         </LinearLayout>
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:textSize="18sp"
+                 android:textStyle="bold"
+                 android:textColor="@color/cardview_dark_background"
+                 android:text="host_value" />
+
+             <TextView
+                 android:layout_marginTop="8dp"
+                 android:id="@+id/host_value"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:gravity="center_vertical"
+                 android:textColor="@color/textColor0"
+                 android:textSize="16sp" />
+
+             <View
+                 android:layout_width="match_parent"
+                 android:layout_height="0.5dp"
+                 android:layout_marginBottom="14dp"
+                 android:layout_marginTop="14dp"
+                 android:background="@color/textColorSecondary" />
+
+         </LinearLayout>
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:textSize="18sp"
+                 android:textStyle="bold"
+                 android:textColor="@color/cardview_dark_background"
+                 android:text="screen_density" />
+
+             <TextView
+                 android:layout_marginTop="8dp"
+                 android:id="@+id/screen_density"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:gravity="center_vertical"
+                 android:textColor="@color/textColor0"
+                 android:textSize="16sp" />
+
+             <View
+                 android:layout_width="match_parent"
+                 android:layout_height="0.5dp"
+                 android:layout_marginBottom="14dp"
+                 android:layout_marginTop="14dp"
+                 android:background="@color/textColorSecondary" />
+
+         </LinearLayout>
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:textSize="18sp"
+                 android:textStyle="bold"
+                 android:textColor="@color/cardview_dark_background"
+                 android:text="build Time" />
+
+             <TextView
+                 android:layout_marginTop="8dp"
+                 android:id="@+id/build_Time"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:gravity="center_vertical"
+                 android:textColor="@color/textColor0"
+                 android:textSize="16sp" />
+
+             <View
+                 android:layout_width="match_parent"
+                 android:layout_height="0.5dp"
+                 android:layout_marginBottom="14dp"
+                 android:layout_marginTop="14dp"
+                 android:background="@color/textColorSecondary" />
+
+         </LinearLayout>
+
+
+             <LinearLayout
+            android:layout_marginBottom="10dp"
+
+             android:paddingBottom="20dp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:textSize="18sp"
+                 android:textStyle="bold"
+                 android:textColor="@color/cardview_dark_background"
+                 android:text="serial nOvalue " />
+
+             <TextView
+                 android:layout_marginTop="8dp"
+                 android:id="@+id/serial_nO_value"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:gravity="center_vertical"
+                 android:textColor="@color/textColor0"
+                 android:textSize="16sp" />
+
+             <View
+                 android:layout_width="match_parent"
+                 android:layout_height="0.5dp"
+                 android:layout_marginBottom="14dp"
+                 android:layout_marginTop="14dp"
+                 android:background="@color/textColorSecondary" />
+
+         </LinearLayout>
+
+             <LinearLayout
+            android:layout_marginBottom="10dp"
+
+             android:paddingBottom="20dp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:textSize="18sp"
+                 android:textStyle="bold"
+                 android:textColor="@color/cardview_dark_background"
+                 android:text="Login Accont " />
+
+             <TextView
+                 android:layout_marginTop="8dp"
+                 android:id="@+id/login_accont"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:gravity="center_vertical"
+                 android:textColor="@color/textColor0"
+                 android:textSize="16sp" />
+
+             <View
+                 android:layout_width="match_parent"
+                 android:layout_height="0.5dp"
+                 android:layout_marginBottom="14dp"
+                 android:layout_marginTop="14dp"
+                 android:background="@color/textColorSecondary" />
+
+         </LinearLayout>
+             <LinearLayout
+            android:layout_marginBottom="10dp"
+
+             android:paddingBottom="20dp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:textSize="18sp"
+                 android:textStyle="bold"
+                 android:textColor="@color/cardview_dark_background"
+                 android:text="User Mobile Number " />
+
+             <TextView
+                 android:layout_marginTop="8dp"
+                 android:id="@+id/mobile"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:gravity="center_vertical"
+                 android:textColor="@color/textColor0"
+                 android:textSize="16sp" />
+
+             <View
+                 android:layout_width="match_parent"
+                 android:layout_height="0.5dp"
+                 android:layout_marginBottom="14dp"
+                 android:layout_marginTop="14dp"
+                 android:background="@color/textColorSecondary" />
+
+         </LinearLayout>
+             <LinearLayout
+            android:layout_marginBottom="10dp"
+
+             android:paddingBottom="20dp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:textSize="18sp"
+                 android:textStyle="bold"
+                 android:textColor="@color/cardview_dark_background"
+                 android:text="Mobile IMIE Number " />
+
+             <TextView
+                 android:layout_marginTop="8dp"
+                 android:id="@+id/mobile_imei"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:gravity="center_vertical"
+                 android:textColor="@color/textColor0"
+                 android:textSize="16sp" />
+
+             <View
+                 android:layout_width="match_parent"
+                 android:layout_height="0.5dp"
+                 android:layout_marginBottom="14dp"
+                 android:layout_marginTop="14dp"
+                 android:background="@color/textColorSecondary" />
+
+         </LinearLayout>
+
+         </LinearLayout>
+         </android.support.v4.widget.NestedScrollView>
+     </LinearLayout>
+
+</LinearLayout>

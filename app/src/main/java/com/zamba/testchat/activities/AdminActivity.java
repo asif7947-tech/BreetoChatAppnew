@@ -69,6 +69,7 @@ public class AdminActivity extends AppCompatActivity {
 
 
 
+
         btn_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -129,6 +130,8 @@ public class AdminActivity extends AppCompatActivity {
     private  void chatDb()
     {
         chatDataList.clear();
+        chatAdapter = new UserAdapter(getApplicationContext(), chatDataList);
+        chatAdapter.notifyDataSetChanged();
         call_search=false;
         Query query = FirebaseDatabase.getInstance().getReference().child("users");
         query.addValueEventListener(new ValueEventListener() {

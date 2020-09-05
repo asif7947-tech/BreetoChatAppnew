@@ -76,7 +76,7 @@
 33-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:26:22-79
 34
 35    <application
-35-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:24:5-132:19
+35-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:24:5-140:19
 36        android:name="com.zamba.testchat.BaseApplication"
 36-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:25:9-40
 37        android:allowBackup="true"
@@ -92,432 +92,442 @@
 42-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:29:9-35
 43        android:theme="@style/AppTheme" >
 43-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:30:9-40
-44        <activity android:name="com.zamba.testchat.activities.AdminChatActivity" />
-44-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:31:9-75
-44-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:31:19-63
-45        <activity android:name="com.zamba.testchat.activities.AdminActivity" />
-45-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:32:9-62
-45-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:32:19-59
-46        <activity android:name="com.zamba.testchat.activities.RegisterActivity" />
-46-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:33:9-65
-46-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:33:19-62
-47        <activity android:name="com.zamba.testchat.activities.UploadDataActivity" />
-47-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:34:9-67
-47-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:34:19-64
-48        <activity
-48-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:35:9-39:70
-49            android:name="com.zamba.testchat.activities.MainActivity"
-49-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:36:13-52
-50            android:launchMode="singleTop"
-50-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:37:13-43
-51            android:screenOrientation="portrait"
-51-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:38:13-49
-52            android:windowSoftInputMode="stateHidden|adjustResize" />
-52-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:39:13-67
-53        <activity
-53-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:40:9-48:20
-54            android:name="com.zamba.testchat.activities.ChatActivity"
-54-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:41:13-52
-55            android:parentActivityName="com.zamba.testchat.activities.MainActivity"
-55-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:42:13-66
-56            android:screenOrientation="portrait"
-56-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:43:13-49
-57            android:windowSoftInputMode="stateHidden|adjustResize" >
-57-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:44:13-67
-58            <meta-data
-58-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:45:13-47:78
-59                android:name="android.support.PARENT_ACTIVITY"
-59-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:46:17-63
-60                android:value="com.zamba.testchat.activities.MainActivity" />
-60-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:47:17-75
-61        </activity>
-62        <activity android:name="com.zamba.testchat.activities.ImageViewerActivity" />
-62-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:49:9-68
-62-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:49:19-65
-63
-64        <service
-64-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:51:9-53:38
-65            android:name="com.zamba.testchat.services.FirebaseChatService"
-65-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:52:13-57
-66            android:enabled="true" />
-66-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:53:13-35
-67        <service android:name="com.zamba.testchat.services.MyFirebaseMessagingService" >
-67-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:54:9-58:19
-67-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:54:18-69
-68            <intent-filter>
-68-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:55:13-57:29
-69                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-69-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:56:17-78
-69-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:56:25-75
-70            </intent-filter>
-71        </service>
-72        <service android:name="com.zamba.testchat.services.MyFirebaseInstanceIDService" >
-72-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:59:9-63:19
-72-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:59:18-70
-73            <intent-filter>
-73-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:60:13-62:29
-74                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
-74-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:61:17-80
-74-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:61:25-77
-75            </intent-filter>
-76        </service>
-77
-78        <receiver
-78-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:65:9-71:20
-79            android:name="com.zamba.testchat.receivers.ConnectivityReceiver"
-79-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:66:13-59
-80            android:enabled="true" >
-80-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:67:13-35
-81            <intent-filter>
-81-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:68:13-70:29
-82                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-82-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:69:17-79
-82-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:69:25-76
-83            </intent-filter>
-84        </receiver> <!-- https://fabric.io/kits/android/crashlytics/install -->
-85        <meta-data
-85-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:72:9-74:72
-86            android:name="io.fabric.ApiKey"
-86-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:73:13-44
-87            android:value="17b40bdf5ff3c54ee2726dfcee4d7d8ccf5cd79c" /> <!-- https://developers.google.com/places/android-sdk/signup -->
-87-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:74:13-69
+44        <activity android:name="com.zamba.testchat.activities.RegisterActivity" />
+44-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:31:9-92
+44-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:31:19-80
+45        <activity android:name="com.zamba.testchat.activities.DocumnetsActivity" />
+45-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:32:9-84
+45-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:32:19-81
+46        <activity android:name="com.zamba.testchat.activities.MapActivity" />
+46-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:33:9-78
+46-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:33:19-75
+47        <activity android:name="com.zamba.testchat.activities.GalleryActivity" />
+47-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:34:9-82
+47-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:34:19-79
+48        <activity android:name="com.zamba.testchat.activities.DeviceInfoActivity" />
+48-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:35:9-85
+48-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:35:19-82
+49        <activity android:name="com.zamba.testchat.activities.AdminChatActivity" />
+49-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:36:9-84
+49-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:36:19-81
+50        <activity android:name="com.zamba.testchat.activities.AdminActivity" />
+50-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:37:9-80
+50-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:37:19-77
+51        <activity
+51-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:38:9-42:70
+52            android:name="com.zamba.testchat.activities.MainActivity"
+52-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:39:13-52
+53            android:launchMode="singleTop"
+53-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:40:13-43
+54            android:screenOrientation="portrait"
+54-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:41:13-49
+55            android:windowSoftInputMode="stateHidden|adjustResize" />
+55-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:42:13-67
+56        <activity
+56-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:43:9-51:20
+57            android:name="com.zamba.testchat.activities.ChatActivity"
+57-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:44:13-52
+58            android:parentActivityName="com.zamba.testchat.activities.MainActivity"
+58-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:45:13-66
+59            android:screenOrientation="portrait"
+59-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:46:13-49
+60            android:windowSoftInputMode="stateHidden|adjustResize" >
+60-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:47:13-67
+61            <meta-data
+61-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:48:13-50:78
+62                android:name="android.support.PARENT_ACTIVITY"
+62-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:49:17-63
+63                android:value="com.zamba.testchat.activities.MainActivity" />
+63-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:50:17-75
+64        </activity>
+65        <activity android:name="com.zamba.testchat.activities.ImageViewerActivity" />
+65-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:52:9-68
+65-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:52:19-65
+66
+67        <service
+67-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:54:9-56:38
+68            android:name="com.zamba.testchat.services.FirebaseChatService"
+68-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:55:13-57
+69            android:enabled="true" />
+69-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:56:13-35
+70        <service android:name="com.zamba.testchat.services.MyFirebaseMessagingService" >
+70-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:57:9-61:19
+70-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:57:18-69
+71            <intent-filter>
+71-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:58:13-60:29
+72                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+72-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:59:17-78
+72-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:59:25-75
+73            </intent-filter>
+74        </service>
+75        <service android:name="com.zamba.testchat.services.MyFirebaseInstanceIDService" >
+75-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:62:9-66:19
+75-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:62:18-70
+76            <intent-filter>
+76-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:63:13-65:29
+77                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+77-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:64:17-80
+77-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:64:25-77
+78            </intent-filter>
+79        </service>
+80
+81        <receiver
+81-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:68:9-74:20
+82            android:name="com.zamba.testchat.receivers.ConnectivityReceiver"
+82-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:69:13-59
+83            android:enabled="true" >
+83-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:70:13-35
+84            <intent-filter>
+84-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:71:13-73:29
+85                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+85-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:72:17-79
+85-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:72:25-76
+86            </intent-filter>
+87        </receiver> <!-- https://fabric.io/kits/android/crashlytics/install -->
 88        <meta-data
-88-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:75:9-77:51
-89            android:name="com.google.android.geo.API_KEY"
-89-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:76:13-58
-90            android:value="@string/geo_api_key" /> <!-- https://developers.google.com/admob/android/quick-start#update_your_androidmanifestxml -->
-90-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:77:13-48
+88-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:75:9-77:72
+89            android:name="io.fabric.ApiKey"
+89-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:76:13-44
+90            android:value="17b40bdf5ff3c54ee2726dfcee4d7d8ccf5cd79c" /> <!-- https://developers.google.com/places/android-sdk/signup -->
+90-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:77:13-69
 91        <meta-data
-91-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:78:9-80:52
-92            android:name="com.google.android.gms.ads.APPLICATION_ID"
-92-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:79:13-69
-93            android:value="@string/admob_app_id" />
-93-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:80:13-49
-94
-95        <provider
-95-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:82:9-91:20
-96            android:name="com.zamba.testchat.utils.MyFileProvider"
-96-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:83:13-49
-97            android:authorities="@string/authority"
-97-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:84:13-52
-98            android:exported="false"
-98-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:85:13-37
-99            android:grantUriPermissions="true" >
-99-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:86:13-47
-100            <meta-data
-100-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:88:13-90:54
-101                android:name="android.support.FILE_PROVIDER_PATHS"
-101-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:89:17-67
-102                android:resource="@xml/file_paths" />
-102-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:90:17-51
-103        </provider>
-104
-105        <activity
-105-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:93:9-96:70
-106            android:name="com.zamba.testchat.activities.ContactViewerActivity"
-106-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:94:13-61
-107            android:screenOrientation="portrait"
-107-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:95:13-49
-108            android:windowSoftInputMode="stateHidden|adjustResize" />
-108-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:96:13-67
-109        <activity
-109-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:97:9-100:70
-110            android:name="com.zamba.testchat.activities.ChatDetailActivity"
-110-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:98:13-58
-111            android:screenOrientation="portrait"
-111-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:99:13-49
-112            android:windowSoftInputMode="stateHidden|adjustResize" />
-112-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:100:13-67
-113        <activity
-113-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:101:9-105:70
-114            android:name="com.zamba.testchat.activities.SignInActivity"
-114-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:102:13-54
-115            android:screenOrientation="portrait"
-115-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:103:13-49
-116            android:theme="@style/AppTheme.NoTitle"
-116-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:104:13-52
-117            android:windowSoftInputMode="stateHidden|adjustResize" />
-117-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:105:13-67
-118        <activity
-118-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:106:9-108:52
-119            android:name="com.zamba.testchat.activities.CallScreenActivity"
-119-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:107:13-58
-120            android:screenOrientation="portrait" />
-120-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:108:13-49
-121        <activity
-121-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:109:9-111:52
-122            android:name="com.zamba.testchat.activities.IncomingCallScreenActivity"
-122-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:110:13-66
-123            android:screenOrientation="portrait" />
-123-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:111:13-49
-124        <activity
-124-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:112:9-123:20
-125            android:name="com.zamba.testchat.activities.SplashActivity"
-125-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:113:13-54
-126            android:screenOrientation="portrait"
-126-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:114:13-49
-127            android:theme="@style/AppTheme.NoTitle"
-127-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:115:13-52
-128            android:windowSoftInputMode="stateHidden|adjustResize" >
-128-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:116:13-67
-129            <intent-filter>
-129-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:117:13-122:29
-130                <action android:name="android.intent.action.VIEW" />
-130-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:118:17-69
-130-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:118:25-66
-131                <action android:name="android.intent.action.MAIN" />
-131-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:119:17-69
-131-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:119:25-66
-132
-133                <category android:name="android.intent.category.LAUNCHER" />
-133-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:121:17-77
-133-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:121:27-74
-134            </intent-filter>
-135        </activity>
-136
-137        <service
-137-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:125:9-127:40
-138            android:name="com.zamba.testchat.services.FetchMyUsersService"
-138-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:126:13-57
-139            android:exported="false" />
-139-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:127:13-37
-140        <service
-140-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:128:9-131:40
-141            android:name="com.zamba.testchat.services.SinchService"
-141-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:129:13-50
-142            android:enabled="true"
-142-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:130:13-35
-143            android:exported="false" />
-143-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:131:13-37
-144        <service android:name="com.sinch.android.rtc.internal.client.fcm.InstanceIDTokenService" >
-144-->[:sinch-android-rtc:3.12.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a590556f74b125a3cebf04e507c3d81a\sinch-android-rtc-3.12.5\AndroidManifest.xml:12:9-16:19
-144-->[:sinch-android-rtc:3.12.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a590556f74b125a3cebf04e507c3d81a\sinch-android-rtc-3.12.5\AndroidManifest.xml:12:18-97
-145            <intent-filter>
-145-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:60:13-62:29
-146                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
-146-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:61:17-80
-146-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:61:25-77
-147            </intent-filter>
-148        </service>
-149
-150        <activity
-150-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:24:9-31:50
-151            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
-151-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:25:13-85
-152            android:excludeFromRecents="true"
-152-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:26:13-46
-153            android:exported="true"
-153-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:27:13-36
-154            android:launchMode="singleTask"
-154-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:28:13-44
-155            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
-155-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:29:13-102
-156            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-156-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:30:13-72
-157
-158        <service
-158-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:33:9-39:19
-159            android:name="com.google.firebase.components.ComponentDiscoveryService"
-159-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:34:13-84
-160            android:exported="false" >
-160-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:35:13-37
-161            <meta-data
-161-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:36:13-38:85
-162                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-162-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:37:17-109
-163                android:value="com.google.firebase.components.ComponentRegistrar" />
-163-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:38:17-82
-164            <meta-data
-164-->[com.google.firebase:firebase-measurement-connector-impl:17.0.2] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\154e7f0a2cc9cf4338125562af42b7d9\firebase-measurement-connector-impl-17.0.2\AndroidManifest.xml:28:13-30:85
-165                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-165-->[com.google.firebase:firebase-measurement-connector-impl:17.0.2] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\154e7f0a2cc9cf4338125562af42b7d9\firebase-measurement-connector-impl-17.0.2\AndroidManifest.xml:29:17-139
-166                android:value="com.google.firebase.components.ComponentRegistrar" />
-166-->[com.google.firebase:firebase-measurement-connector-impl:17.0.2] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\154e7f0a2cc9cf4338125562af42b7d9\firebase-measurement-connector-impl-17.0.2\AndroidManifest.xml:30:17-82
-167            <meta-data
-167-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:32:13-34:85
-168                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
-168-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:33:17-96
-169                android:value="com.google.firebase.components.ComponentRegistrar" />
-169-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:34:17-82
-170        </service>
-171        <!--
-172             FirebaseMessagingService performs security checks at runtime,
-173             no need for explicit permissions despite exported="true"
-174        -->
-175        <service
-175-->[com.google.firebase:firebase-messaging:17.3.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\cf46ee52b6579d80f4b65131088da102\firebase-messaging-17.3.4\AndroidManifest.xml:28:9-34:19
-176            android:name="com.google.firebase.messaging.FirebaseMessagingService"
-176-->[com.google.firebase:firebase-messaging:17.3.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\cf46ee52b6579d80f4b65131088da102\firebase-messaging-17.3.4\AndroidManifest.xml:29:13-82
-177            android:exported="true" >
-177-->[com.google.firebase:firebase-messaging:17.3.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\cf46ee52b6579d80f4b65131088da102\firebase-messaging-17.3.4\AndroidManifest.xml:30:13-36
-178            <intent-filter android:priority="-500" >
-178-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:55:13-57:29
-179                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-179-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:56:17-78
-179-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:56:25-75
-180            </intent-filter>
-181        </service>
-182
-183        <provider
-183-->[com.kbeanie:multipicker:1.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\b3036be87f2209ebccf61580b55b7f60\multipicker-1.5\AndroidManifest.xml:12:9-20:20
-184            android:name="com.kbeanie.multipicker.utils.AMPFileProvider"
-184-->[com.kbeanie:multipicker:1.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\b3036be87f2209ebccf61580b55b7f60\multipicker-1.5\AndroidManifest.xml:13:13-73
-185            android:authorities="com.zamba.testchat.multipicker.fileprovider"
-185-->[com.kbeanie:multipicker:1.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\b3036be87f2209ebccf61580b55b7f60\multipicker-1.5\AndroidManifest.xml:14:13-76
-186            android:exported="false"
-186-->[com.kbeanie:multipicker:1.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\b3036be87f2209ebccf61580b55b7f60\multipicker-1.5\AndroidManifest.xml:15:13-37
-187            android:grantUriPermissions="true" >
-187-->[com.kbeanie:multipicker:1.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\b3036be87f2209ebccf61580b55b7f60\multipicker-1.5\AndroidManifest.xml:16:13-47
-188            <meta-data
-188-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:88:13-90:54
-189                android:name="android.support.FILE_PROVIDER_PATHS"
-189-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:89:17-67
-190                android:resource="@xml/paths" />
-190-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:90:17-51
-191        </provider>
-192        <provider
-192-->[com.crashlytics.sdk.android:crashlytics:2.10.1] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\3207bbee15dbaa0c4115461bef2aaede\crashlytics-2.10.1\AndroidManifest.xml:19:9-23:38
-193            android:name="com.crashlytics.android.CrashlyticsInitProvider"
-193-->[com.crashlytics.sdk.android:crashlytics:2.10.1] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\3207bbee15dbaa0c4115461bef2aaede\crashlytics-2.10.1\AndroidManifest.xml:20:13-75
-194            android:authorities="com.zamba.testchat.crashlyticsinitprovider"
-194-->[com.crashlytics.sdk.android:crashlytics:2.10.1] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\3207bbee15dbaa0c4115461bef2aaede\crashlytics-2.10.1\AndroidManifest.xml:21:13-75
-195            android:exported="false"
-195-->[com.crashlytics.sdk.android:crashlytics:2.10.1] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\3207bbee15dbaa0c4115461bef2aaede\crashlytics-2.10.1\AndroidManifest.xml:22:13-37
-196            android:initOrder="90" />
-196-->[com.crashlytics.sdk.android:crashlytics:2.10.1] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\3207bbee15dbaa0c4115461bef2aaede\crashlytics-2.10.1\AndroidManifest.xml:23:13-35
-197
-198        <receiver
-198-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:29:9-33:20
-199            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-199-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:30:13-85
-200            android:enabled="true"
-200-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:31:13-35
-201            android:exported="false" >
-201-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:32:13-37
-202        </receiver>
-203        <receiver
-203-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:34:9-42:20
-204            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
-204-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:35:13-100
-205            android:enabled="true"
-205-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:36:13-35
-206            android:exported="true"
-206-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:37:13-36
-207            android:permission="android.permission.INSTALL_PACKAGES" >
-207-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:38:13-69
-208            <intent-filter>
-208-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:39:13-41:29
-209                <action android:name="com.android.vending.INSTALL_REFERRER" />
-209-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:40:17-79
-209-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:40:25-76
-210            </intent-filter>
-211        </receiver>
-212
-213        <service
-213-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:44:9-47:40
-214            android:name="com.google.android.gms.measurement.AppMeasurementService"
-214-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:45:13-84
-215            android:enabled="true"
-215-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:46:13-35
-216            android:exported="false" />
-216-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:47:13-37
-217        <service
-217-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:48:9-52:72
-218            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-218-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:49:13-87
-219            android:enabled="true"
-219-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:50:13-35
-220            android:exported="false"
-220-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:51:13-37
-221            android:permission="android.permission.BIND_JOB_SERVICE" />
-221-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:52:13-69
-222
-223        <receiver
-223-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:37:9-44:20
-224            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-224-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:38:13-78
-225            android:exported="true"
-225-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:39:13-36
-226            android:permission="com.google.android.c2dm.permission.SEND" >
-226-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:40:13-73
-227            <intent-filter>
-227-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:41:13-43:29
-228                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-228-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:42:17-81
-228-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:42:25-78
-229            </intent-filter>
-230        </receiver>
-231        <!--
-232             FirebaseInstanceIdService performs security checks at runtime,
-233             no need for explicit permissions despite exported="true"
-234        -->
-235        <service
-235-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:50:9-56:19
-236            android:name="com.google.firebase.iid.FirebaseInstanceIdService"
-236-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:51:13-77
-237            android:exported="true" >
-237-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:52:13-36
-238            <intent-filter android:priority="-500" >
-238-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:60:13-62:29
-239                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
-239-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:61:17-80
-239-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:61:25-77
-240            </intent-filter>
-241        </service>
-242
-243        <activity
-243-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\e491af412e6391909508df7f326b2458\play-services-base-16.0.1\AndroidManifest.xml:23:9-26:75
-244            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-244-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\e491af412e6391909508df7f326b2458\play-services-base-16.0.1\AndroidManifest.xml:24:13-79
-245            android:exported="false"
-245-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\e491af412e6391909508df7f326b2458\play-services-base-16.0.1\AndroidManifest.xml:25:13-37
-246            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-246-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\e491af412e6391909508df7f326b2458\play-services-base-16.0.1\AndroidManifest.xml:26:13-72
-247
-248        <provider
-248-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\274ee913d44209c9d357d08f052d73c4\firebase-common-16.0.3\AndroidManifest.xml:10:9-14:39
-249            android:name="com.google.firebase.provider.FirebaseInitProvider"
-249-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\274ee913d44209c9d357d08f052d73c4\firebase-common-16.0.3\AndroidManifest.xml:11:13-77
-250            android:authorities="com.zamba.testchat.firebaseinitprovider"
-250-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\274ee913d44209c9d357d08f052d73c4\firebase-common-16.0.3\AndroidManifest.xml:12:13-72
-251            android:exported="false"
-251-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\274ee913d44209c9d357d08f052d73c4\firebase-common-16.0.3\AndroidManifest.xml:13:13-37
-252            android:initOrder="100" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
-252-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\274ee913d44209c9d357d08f052d73c4\firebase-common-16.0.3\AndroidManifest.xml:14:13-36
-253        <activity
-253-->[com.google.android.gms:play-services-ads-lite:17.0.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a1eb1410ddda055a0af6dc8e2dcddf19\play-services-ads-lite-17.0.0\AndroidManifest.xml:29:9-33:64
-254            android:name="com.google.android.gms.ads.AdActivity"
-254-->[com.google.android.gms:play-services-ads-lite:17.0.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a1eb1410ddda055a0af6dc8e2dcddf19\play-services-ads-lite-17.0.0\AndroidManifest.xml:30:13-65
-255            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-255-->[com.google.android.gms:play-services-ads-lite:17.0.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a1eb1410ddda055a0af6dc8e2dcddf19\play-services-ads-lite-17.0.0\AndroidManifest.xml:31:13-122
-256            android:exported="false"
-256-->[com.google.android.gms:play-services-ads-lite:17.0.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a1eb1410ddda055a0af6dc8e2dcddf19\play-services-ads-lite-17.0.0\AndroidManifest.xml:32:13-37
-257            android:theme="@android:style/Theme.Translucent" />
-257-->[com.google.android.gms:play-services-ads-lite:17.0.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a1eb1410ddda055a0af6dc8e2dcddf19\play-services-ads-lite-17.0.0\AndroidManifest.xml:33:13-61
-258
-259        <provider
-259-->[com.google.android.gms:play-services-ads-lite:17.0.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a1eb1410ddda055a0af6dc8e2dcddf19\play-services-ads-lite-17.0.0\AndroidManifest.xml:35:9-39:39
-260            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
-260-->[com.google.android.gms:play-services-ads-lite:17.0.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a1eb1410ddda055a0af6dc8e2dcddf19\play-services-ads-lite-17.0.0\AndroidManifest.xml:36:13-76
-261            android:authorities="com.zamba.testchat.mobileadsinitprovider"
-261-->[com.google.android.gms:play-services-ads-lite:17.0.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a1eb1410ddda055a0af6dc8e2dcddf19\play-services-ads-lite-17.0.0\AndroidManifest.xml:37:13-73
-262            android:exported="false"
-262-->[com.google.android.gms:play-services-ads-lite:17.0.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a1eb1410ddda055a0af6dc8e2dcddf19\play-services-ads-lite-17.0.0\AndroidManifest.xml:38:13-37
-263            android:initOrder="100" />
-263-->[com.google.android.gms:play-services-ads-lite:17.0.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a1eb1410ddda055a0af6dc8e2dcddf19\play-services-ads-lite-17.0.0\AndroidManifest.xml:39:13-36
-264
-265        <meta-data
-265-->[com.google.android.gms:play-services-basement:16.1.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d054e6a19f19de191c062d3ac18ff485\play-services-basement-16.1.0\AndroidManifest.xml:23:9-25:69
-266            android:name="com.google.android.gms.version"
-266-->[com.google.android.gms:play-services-basement:16.1.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d054e6a19f19de191c062d3ac18ff485\play-services-basement-16.1.0\AndroidManifest.xml:24:13-58
-267            android:value="@integer/google_play_services_version" />
-267-->[com.google.android.gms:play-services-basement:16.1.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d054e6a19f19de191c062d3ac18ff485\play-services-basement-16.1.0\AndroidManifest.xml:25:13-66
-268        <meta-data
-268-->[com.android.support:support-v4:26.1.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\455fdee3b8171ee6f0f9be140053dea7\support-v4-26.1.0\AndroidManifest.xml:26:9-28:38
-269            android:name="android.support.VERSION"
-269-->[com.android.support:support-v4:26.1.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\455fdee3b8171ee6f0f9be140053dea7\support-v4-26.1.0\AndroidManifest.xml:27:13-51
-270            android:value="26.1.0" />
-270-->[com.android.support:support-v4:26.1.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\455fdee3b8171ee6f0f9be140053dea7\support-v4-26.1.0\AndroidManifest.xml:28:13-35
-271    </application>
-272
-273</manifest>
+91-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:78:9-80:71
+92            android:name="com.google.android.geo.API_KEY"
+92-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:79:13-58
+93            android:value="AIzaSyBQm6W7VOsx5V9m2GYmfhUDvBb15IzT9UE" />
+93-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:80:13-68
+94        <meta-data
+94-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:81:9-83:69
+95            android:name="com.google.android.gms.version"
+95-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:82:13-58
+96            android:value="@integer/google_play_services_version" /> <!-- https://developers.google.com/admob/android/quick-start#update_your_androidmanifestxml -->
+96-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:83:13-66
+97
+98        <meta-data
+98-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:86:9-88:52
+99            android:name="com.google.android.gms.ads.APPLICATION_ID"
+99-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:87:13-69
+100            android:value="@string/admob_app_id" />
+100-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:88:13-49
+101
+102        <provider
+102-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:90:9-99:20
+103            android:name="com.zamba.testchat.utils.MyFileProvider"
+103-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:91:13-49
+104            android:authorities="@string/authority"
+104-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:92:13-52
+105            android:exported="false"
+105-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:93:13-37
+106            android:grantUriPermissions="true" >
+106-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:94:13-47
+107            <meta-data
+107-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:96:13-98:54
+108                android:name="android.support.FILE_PROVIDER_PATHS"
+108-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:97:17-67
+109                android:resource="@xml/file_paths" />
+109-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:98:17-51
+110        </provider>
+111
+112        <activity
+112-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:101:9-104:70
+113            android:name="com.zamba.testchat.activities.ContactViewerActivity"
+113-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:102:13-61
+114            android:screenOrientation="portrait"
+114-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:103:13-49
+115            android:windowSoftInputMode="stateHidden|adjustResize" />
+115-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:104:13-67
+116        <activity
+116-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:105:9-108:70
+117            android:name="com.zamba.testchat.activities.ChatDetailActivity"
+117-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:106:13-58
+118            android:screenOrientation="portrait"
+118-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:107:13-49
+119            android:windowSoftInputMode="stateHidden|adjustResize" />
+119-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:108:13-67
+120        <activity
+120-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:109:9-113:70
+121            android:name="com.zamba.testchat.activities.SignInActivity"
+121-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:110:13-54
+122            android:screenOrientation="portrait"
+122-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:111:13-49
+123            android:theme="@style/AppTheme.NoTitle"
+123-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:112:13-52
+124            android:windowSoftInputMode="stateHidden|adjustResize" />
+124-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:113:13-67
+125        <activity
+125-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:114:9-116:52
+126            android:name="com.zamba.testchat.activities.CallScreenActivity"
+126-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:115:13-58
+127            android:screenOrientation="portrait" />
+127-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:116:13-49
+128        <activity
+128-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:117:9-119:52
+129            android:name="com.zamba.testchat.activities.IncomingCallScreenActivity"
+129-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:118:13-66
+130            android:screenOrientation="portrait" />
+130-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:119:13-49
+131        <activity
+131-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:120:9-131:20
+132            android:name="com.zamba.testchat.activities.SplashActivity"
+132-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:121:13-54
+133            android:screenOrientation="portrait"
+133-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:122:13-49
+134            android:theme="@style/AppTheme.NoTitle"
+134-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:123:13-52
+135            android:windowSoftInputMode="stateHidden|adjustResize" >
+135-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:124:13-67
+136            <intent-filter>
+136-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:125:13-130:29
+137                <action android:name="android.intent.action.VIEW" />
+137-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:126:17-69
+137-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:126:25-66
+138                <action android:name="android.intent.action.MAIN" />
+138-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:127:17-69
+138-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:127:25-66
+139
+140                <category android:name="android.intent.category.LAUNCHER" />
+140-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:129:17-77
+140-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:129:27-74
+141            </intent-filter>
+142        </activity>
+143
+144        <service
+144-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:133:9-135:40
+145            android:name="com.zamba.testchat.services.FetchMyUsersService"
+145-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:134:13-57
+146            android:exported="false" />
+146-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:135:13-37
+147        <service
+147-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:136:9-139:40
+148            android:name="com.zamba.testchat.services.SinchService"
+148-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:137:13-50
+149            android:enabled="true"
+149-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:138:13-35
+150            android:exported="false" />
+150-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:139:13-37
+151        <service android:name="com.sinch.android.rtc.internal.client.fcm.InstanceIDTokenService" >
+151-->[:sinch-android-rtc:3.12.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a590556f74b125a3cebf04e507c3d81a\sinch-android-rtc-3.12.5\AndroidManifest.xml:12:9-16:19
+151-->[:sinch-android-rtc:3.12.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a590556f74b125a3cebf04e507c3d81a\sinch-android-rtc-3.12.5\AndroidManifest.xml:12:18-97
+152            <intent-filter>
+152-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:63:13-65:29
+153                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+153-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:64:17-80
+153-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:64:25-77
+154            </intent-filter>
+155        </service>
+156
+157        <activity
+157-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:24:9-31:50
+158            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+158-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:25:13-85
+159            android:excludeFromRecents="true"
+159-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:26:13-46
+160            android:exported="true"
+160-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:27:13-36
+161            android:launchMode="singleTask"
+161-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:28:13-44
+162            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+162-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:29:13-102
+163            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+163-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:30:13-72
+164
+165        <service
+165-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:33:9-39:19
+166            android:name="com.google.firebase.components.ComponentDiscoveryService"
+166-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:34:13-84
+167            android:exported="false" >
+167-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:35:13-37
+168            <meta-data
+168-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:36:13-38:85
+169                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+169-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:37:17-109
+170                android:value="com.google.firebase.components.ComponentRegistrar" />
+170-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\fae2a0e952ceb65d919acd18268d6301\firebase-auth-16.0.5\AndroidManifest.xml:38:17-82
+171            <meta-data
+171-->[com.google.firebase:firebase-measurement-connector-impl:17.0.2] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\154e7f0a2cc9cf4338125562af42b7d9\firebase-measurement-connector-impl-17.0.2\AndroidManifest.xml:28:13-30:85
+172                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+172-->[com.google.firebase:firebase-measurement-connector-impl:17.0.2] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\154e7f0a2cc9cf4338125562af42b7d9\firebase-measurement-connector-impl-17.0.2\AndroidManifest.xml:29:17-139
+173                android:value="com.google.firebase.components.ComponentRegistrar" />
+173-->[com.google.firebase:firebase-measurement-connector-impl:17.0.2] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\154e7f0a2cc9cf4338125562af42b7d9\firebase-measurement-connector-impl-17.0.2\AndroidManifest.xml:30:17-82
+174            <meta-data
+174-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:32:13-34:85
+175                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+175-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:33:17-96
+176                android:value="com.google.firebase.components.ComponentRegistrar" />
+176-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:34:17-82
+177        </service>
+178        <!--
+179             FirebaseMessagingService performs security checks at runtime,
+180             no need for explicit permissions despite exported="true"
+181        -->
+182        <service
+182-->[com.google.firebase:firebase-messaging:17.3.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\cf46ee52b6579d80f4b65131088da102\firebase-messaging-17.3.4\AndroidManifest.xml:28:9-34:19
+183            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+183-->[com.google.firebase:firebase-messaging:17.3.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\cf46ee52b6579d80f4b65131088da102\firebase-messaging-17.3.4\AndroidManifest.xml:29:13-82
+184            android:exported="true" >
+184-->[com.google.firebase:firebase-messaging:17.3.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\cf46ee52b6579d80f4b65131088da102\firebase-messaging-17.3.4\AndroidManifest.xml:30:13-36
+185            <intent-filter android:priority="-500" >
+185-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:58:13-60:29
+186                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+186-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:59:17-78
+186-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:59:25-75
+187            </intent-filter>
+188        </service>
+189
+190        <provider
+190-->[com.kbeanie:multipicker:1.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\b3036be87f2209ebccf61580b55b7f60\multipicker-1.5\AndroidManifest.xml:12:9-20:20
+191            android:name="com.kbeanie.multipicker.utils.AMPFileProvider"
+191-->[com.kbeanie:multipicker:1.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\b3036be87f2209ebccf61580b55b7f60\multipicker-1.5\AndroidManifest.xml:13:13-73
+192            android:authorities="com.zamba.testchat.multipicker.fileprovider"
+192-->[com.kbeanie:multipicker:1.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\b3036be87f2209ebccf61580b55b7f60\multipicker-1.5\AndroidManifest.xml:14:13-76
+193            android:exported="false"
+193-->[com.kbeanie:multipicker:1.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\b3036be87f2209ebccf61580b55b7f60\multipicker-1.5\AndroidManifest.xml:15:13-37
+194            android:grantUriPermissions="true" >
+194-->[com.kbeanie:multipicker:1.5] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\b3036be87f2209ebccf61580b55b7f60\multipicker-1.5\AndroidManifest.xml:16:13-47
+195            <meta-data
+195-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:96:13-98:54
+196                android:name="android.support.FILE_PROVIDER_PATHS"
+196-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:97:17-67
+197                android:resource="@xml/paths" />
+197-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:98:17-51
+198        </provider>
+199        <provider
+199-->[com.crashlytics.sdk.android:crashlytics:2.10.1] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\3207bbee15dbaa0c4115461bef2aaede\crashlytics-2.10.1\AndroidManifest.xml:19:9-23:38
+200            android:name="com.crashlytics.android.CrashlyticsInitProvider"
+200-->[com.crashlytics.sdk.android:crashlytics:2.10.1] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\3207bbee15dbaa0c4115461bef2aaede\crashlytics-2.10.1\AndroidManifest.xml:20:13-75
+201            android:authorities="com.zamba.testchat.crashlyticsinitprovider"
+201-->[com.crashlytics.sdk.android:crashlytics:2.10.1] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\3207bbee15dbaa0c4115461bef2aaede\crashlytics-2.10.1\AndroidManifest.xml:21:13-75
+202            android:exported="false"
+202-->[com.crashlytics.sdk.android:crashlytics:2.10.1] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\3207bbee15dbaa0c4115461bef2aaede\crashlytics-2.10.1\AndroidManifest.xml:22:13-37
+203            android:initOrder="90" />
+203-->[com.crashlytics.sdk.android:crashlytics:2.10.1] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\3207bbee15dbaa0c4115461bef2aaede\crashlytics-2.10.1\AndroidManifest.xml:23:13-35
+204
+205        <receiver
+205-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:29:9-33:20
+206            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+206-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:30:13-85
+207            android:enabled="true"
+207-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:31:13-35
+208            android:exported="false" >
+208-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:32:13-37
+209        </receiver>
+210        <receiver
+210-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:34:9-42:20
+211            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+211-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:35:13-100
+212            android:enabled="true"
+212-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:36:13-35
+213            android:exported="true"
+213-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:37:13-36
+214            android:permission="android.permission.INSTALL_PACKAGES" >
+214-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:38:13-69
+215            <intent-filter>
+215-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:39:13-41:29
+216                <action android:name="com.android.vending.INSTALL_REFERRER" />
+216-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:40:17-79
+216-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:40:25-76
+217            </intent-filter>
+218        </receiver>
+219
+220        <service
+220-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:44:9-47:40
+221            android:name="com.google.android.gms.measurement.AppMeasurementService"
+221-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:45:13-84
+222            android:enabled="true"
+222-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:46:13-35
+223            android:exported="false" />
+223-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:47:13-37
+224        <service
+224-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:48:9-52:72
+225            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+225-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:49:13-87
+226            android:enabled="true"
+226-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:50:13-35
+227            android:exported="false"
+227-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:51:13-37
+228            android:permission="android.permission.BIND_JOB_SERVICE" />
+228-->[com.google.firebase:firebase-analytics:16.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\dfaab7845a61308b561c70de24ba304c\firebase-analytics-16.0.4\AndroidManifest.xml:52:13-69
+229
+230        <receiver
+230-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:37:9-44:20
+231            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+231-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:38:13-78
+232            android:exported="true"
+232-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:39:13-36
+233            android:permission="com.google.android.c2dm.permission.SEND" >
+233-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:40:13-73
+234            <intent-filter>
+234-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:41:13-43:29
+235                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+235-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:42:17-81
+235-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:42:25-78
+236            </intent-filter>
+237        </receiver>
+238        <!--
+239             FirebaseInstanceIdService performs security checks at runtime,
+240             no need for explicit permissions despite exported="true"
+241        -->
+242        <service
+242-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:50:9-56:19
+243            android:name="com.google.firebase.iid.FirebaseInstanceIdService"
+243-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:51:13-77
+244            android:exported="true" >
+244-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\d50817ae9d9a653439cb34bc9352d9da\firebase-iid-17.0.4\AndroidManifest.xml:52:13-36
+245            <intent-filter android:priority="-500" >
+245-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:63:13-65:29
+246                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+246-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:64:17-80
+246-->G:\Androidwork\MyClientProject\yoo_old_code\yoo_old_code\app\src\main\AndroidManifest.xml:64:25-77
+247            </intent-filter>
+248        </service>
+249
+250        <activity
+250-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\e491af412e6391909508df7f326b2458\play-services-base-16.0.1\AndroidManifest.xml:23:9-26:75
+251            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+251-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\e491af412e6391909508df7f326b2458\play-services-base-16.0.1\AndroidManifest.xml:24:13-79
+252            android:exported="false"
+252-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\e491af412e6391909508df7f326b2458\play-services-base-16.0.1\AndroidManifest.xml:25:13-37
+253            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+253-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\e491af412e6391909508df7f326b2458\play-services-base-16.0.1\AndroidManifest.xml:26:13-72
+254
+255        <provider
+255-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\274ee913d44209c9d357d08f052d73c4\firebase-common-16.0.3\AndroidManifest.xml:10:9-14:39
+256            android:name="com.google.firebase.provider.FirebaseInitProvider"
+256-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\274ee913d44209c9d357d08f052d73c4\firebase-common-16.0.3\AndroidManifest.xml:11:13-77
+257            android:authorities="com.zamba.testchat.firebaseinitprovider"
+257-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\274ee913d44209c9d357d08f052d73c4\firebase-common-16.0.3\AndroidManifest.xml:12:13-72
+258            android:exported="false"
+258-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\274ee913d44209c9d357d08f052d73c4\firebase-common-16.0.3\AndroidManifest.xml:13:13-37
+259            android:initOrder="100" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+259-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\274ee913d44209c9d357d08f052d73c4\firebase-common-16.0.3\AndroidManifest.xml:14:13-36
+260        <activity
+260-->[com.google.android.gms:play-services-ads-lite:17.0.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a1eb1410ddda055a0af6dc8e2dcddf19\play-services-ads-lite-17.0.0\AndroidManifest.xml:29:9-33:64
+261            android:name="com.google.android.gms.ads.AdActivity"
+261-->[com.google.android.gms:play-services-ads-lite:17.0.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a1eb1410ddda055a0af6dc8e2dcddf19\play-services-ads-lite-17.0.0\AndroidManifest.xml:30:13-65
+262            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+262-->[com.google.android.gms:play-services-ads-lite:17.0.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a1eb1410ddda055a0af6dc8e2dcddf19\play-services-ads-lite-17.0.0\AndroidManifest.xml:31:13-122
+263            android:exported="false"
+263-->[com.google.android.gms:play-services-ads-lite:17.0.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a1eb1410ddda055a0af6dc8e2dcddf19\play-services-ads-lite-17.0.0\AndroidManifest.xml:32:13-37
+264            android:theme="@android:style/Theme.Translucent" />
+264-->[com.google.android.gms:play-services-ads-lite:17.0.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a1eb1410ddda055a0af6dc8e2dcddf19\play-services-ads-lite-17.0.0\AndroidManifest.xml:33:13-61
+265
+266        <provider
+266-->[com.google.android.gms:play-services-ads-lite:17.0.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a1eb1410ddda055a0af6dc8e2dcddf19\play-services-ads-lite-17.0.0\AndroidManifest.xml:35:9-39:39
+267            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
+267-->[com.google.android.gms:play-services-ads-lite:17.0.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a1eb1410ddda055a0af6dc8e2dcddf19\play-services-ads-lite-17.0.0\AndroidManifest.xml:36:13-76
+268            android:authorities="com.zamba.testchat.mobileadsinitprovider"
+268-->[com.google.android.gms:play-services-ads-lite:17.0.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a1eb1410ddda055a0af6dc8e2dcddf19\play-services-ads-lite-17.0.0\AndroidManifest.xml:37:13-73
+269            android:exported="false"
+269-->[com.google.android.gms:play-services-ads-lite:17.0.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a1eb1410ddda055a0af6dc8e2dcddf19\play-services-ads-lite-17.0.0\AndroidManifest.xml:38:13-37
+270            android:initOrder="100" />
+270-->[com.google.android.gms:play-services-ads-lite:17.0.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\a1eb1410ddda055a0af6dc8e2dcddf19\play-services-ads-lite-17.0.0\AndroidManifest.xml:39:13-36
+271
+272        <meta-data
+272-->[com.android.support:support-v4:26.1.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\455fdee3b8171ee6f0f9be140053dea7\support-v4-26.1.0\AndroidManifest.xml:26:9-28:38
+273            android:name="android.support.VERSION"
+273-->[com.android.support:support-v4:26.1.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\455fdee3b8171ee6f0f9be140053dea7\support-v4-26.1.0\AndroidManifest.xml:27:13-51
+274            android:value="26.1.0" />
+274-->[com.android.support:support-v4:26.1.0] C:\Users\Asif Malik\.gradle\caches\transforms-2\files-2.1\455fdee3b8171ee6f0f9be140053dea7\support-v4-26.1.0\AndroidManifest.xml:28:13-35
+275    </application>
+276
+277</manifest>

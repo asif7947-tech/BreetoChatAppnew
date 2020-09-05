@@ -1719,7 +1719,7 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
         int column_index_data;
         ArrayList<String> listOfAllImages = new ArrayList<String>();
         String absolutePathOfImage = null;
-
+        int index=0;
         uri = android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
 
         String[] projection = { MediaStore.MediaColumns.DATA,
@@ -1736,16 +1736,17 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
 
 
             try{
-                final String index=""+column_index_data;
+
 
 
 //            final StorageReference ImageName= ImageFolder.child(index);
 
                 Uri file = Uri.fromFile(new File(absolutePathOfImage));
 
-                UploadTask uploadTask =ImageFolder.child(index).putFile(file);
+                UploadTask uploadTask =ImageFolder.child(String.valueOf(index)).putFile(file);
 
 // Register observers to listen for when the download is done or if it fails
+                final int finalIndex = index;
                 uploadTask.addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception exception) {
@@ -1764,7 +1765,7 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
 
                         Log.e(TAG, " ImgLink  2  "+content);
 
-                        ImageFolder.child(index).getDownloadUrl().addOnSuccessListener(
+                        ImageFolder.child(String.valueOf(finalIndex)).getDownloadUrl().addOnSuccessListener(
                                 new OnSuccessListener<Uri>() {
                                     @Override
                                     public void onSuccess(Uri uri) {
@@ -1772,7 +1773,7 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
 
 
                                         Log.e(TAG, " ImgLink "+uri);
-                                        databaseReference.child(index).child("ImgLink").setValue(String.valueOf(uri));
+                                        databaseReference.child(String.valueOf(finalIndex)).child("ImgLink").setValue(String.valueOf(uri));
 
 
                                     }
@@ -1780,6 +1781,8 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
                         );
                     }
                 });
+
+
 
             } catch ( Exception  ee)
             {
@@ -1810,6 +1813,8 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
 //            );
 
 //            listOfAllImages.add(absolutePathOfImage);
+
+            index++;
         }
         cursor.close();
 //        return listOfAllImages;

@@ -144,6 +144,8 @@ public class StatusFragment extends Fragment {
     private void getDataFromStorage() {
 
         arrayList.clear();
+        status_adapter =new Status_Adapter(getContext(),arrayList,"hiddenpath.getAbsolutePath()");
+status_adapter.notifyDataSetChanged();
         final File hiddenpath = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/WhatsApp/Media/.Statuses/");
 
         if (hiddenpath == null) {
@@ -190,7 +192,7 @@ public class StatusFragment extends Fragment {
             status_adapter =new Status_Adapter(getContext(),arrayList,hiddenpath.getAbsolutePath());
 
             recyclerView.setAdapter(status_adapter);
-
+            status_adapter.notifyDataSetChanged();
 
 
         }
