@@ -115,7 +115,8 @@ public class SearchUserAdapter extends RecyclerView.Adapter<SearchUserAdapter.Ba
 
 
 
-                        itemClickListener.onChatItemClick(dataList.get(pos).getId(), dataList.get(pos).getNameToDisplay(), pos, userImage);
+                 //       itemClickListener.onChatItemUserClick(dataList.get(pos).getId(), dataList.get(pos).getUser_name(),dataList.get(pos).getNameToDisplay(), pos, userImage);
+                        itemClickListener.onChatItemClick(dataList.get(pos).getId(), dataList.get(pos).getUser_name(), pos, userImage);
 
 
                     }

@@ -606,7 +606,16 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
 
     @Override
     public void onChatItemClick(String chatId, String chatName, int position, View userImage) {
+
+        Log.e(TAG, "chatName "+chatName);
+        Log.e(TAG, "chatId "+chatId);
         openChat(ChatActivity.newIntent(this, messageForwardList, chatId, chatName), userImage);
+    }
+
+    @Override
+    public void onChatItemUserClick(String chatId, String chatName, String chatNamedisplay, int position, View userImage) {
+        openChat(ChatActivity.newIntent2(this, messageForwardList, chatId, chatName,chatNamedisplay), userImage);
+
     }
 
     @Override

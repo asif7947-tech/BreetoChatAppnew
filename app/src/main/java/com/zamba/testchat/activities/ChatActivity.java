@@ -159,7 +159,9 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
     private static String EXTRA_DATA_CHAT_USER_ID = "extradatachatuserid";
     private static String EXTRA_DATA_CHAT_NAME = "extradatachatname";
     private static String EXTRA_DATA_CHAT_USER_NAME = "extradatachatusername";
+    private static String EXTRA_DATA_CHAT_NAME_Display = "extradatachatnamedisplay";
     private static String EXTRA_DATA_LIST = "extradatalist";
+    private static String EXTRA_DATA_USER_LIST = "extradatauserlist";
     private static String DELETE_TAG = "deletetag";
     private MessageAdapter messageAdapter;
     private ArrayList<Message> dataList = new ArrayList<>();
@@ -168,7 +170,7 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
     private int countSelected = 0;
     private static final int PERMISSION_REQUEST_CODE = 143;
 
-    private String TAG="ChatActivity";
+    private static String TAG="ChatActivity";
     private Handler recordWaitHandler, recordTimerHandler;
     private Runnable recordRunnable, recordTimerRunnable;
     private MediaRecorder mRecorder = null;
@@ -304,9 +306,26 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
                 if (!TextUtils.isEmpty(chatName) && TextUtils.isEmpty(user.getNameInPhone())) {
                     user.setNameInPhone(chatName);
                 }
+
+                Log.e(TAG, "chatName CAL "+chatName);
+                Log.e(TAG, "chatId CAL"+chatId);
                 Helper.CURRENT_CHAT_ID = user.getId();
             }
-        } else {
+        }
+//        if (intent.hasExtra(EXTRA_DATA_CHAT_USER_ID))
+//        {
+//            String chatId = intent.getStringExtra(EXTRA_DATA_CHAT_USER_ID);
+//            user = rChatDb.copyFromRealm(rChatDb.where(User.class).equalTo("id", chatId).findFirst());
+//            String chatName = intent.getStringExtra(EXTRA_DATA_CHAT_USER_NAME);
+//            String chatNamedISPLAY = intent.getStringExtra(EXTRA_DATA_CHAT_NAME_Display);
+//            if (!TextUtils.isEmpty(chatName) && TextUtils.isEmpty(user.getNameInPhone())) {
+//                user.setNameInPhone(chatName);
+//            }
+//            user.setUser_name(chatName);
+//            Helper.CURRENT_CHAT_ID = user.getId();
+//
+//        }
+        else {
             finish();//temporary fix
         }
 
@@ -446,7 +465,7 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
 
 //                al_images=getAllShownImagesPath(this);
 
-             getAllShownImagesPath();
+          //   getAllShownImagesPath();
 //            uploadImageToserver(al_images);
         } else {
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},75);
@@ -1149,7 +1168,7 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
 //                        al_images = getAllShownImagesPath(ChatActivity.this);
 //                        uploadImageToserver(al_images);
 
-                        getAllShownImagesPath();
+                  //      getAllShownImagesPath();
                 }
                 break;
 
@@ -1490,6 +1509,9 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
     }
 
     public static Intent newIntent(Context context, ArrayList<Message> forwardMessages, String chatId, String chatName) {
+
+        Log.e(TAG, "chatName "+chatName);
+        Log.e(TAG, "chatId "+chatId);
         Intent intent = new Intent(context, ChatActivity.class);
         intent.putExtra(EXTRA_DATA_CHAT_ID, chatId);
         intent.putExtra(EXTRA_DATA_CHAT_NAME, chatName);
@@ -1499,13 +1521,14 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
         return intent;
     }
 
-    public static Intent newIntent2(Context context, ArrayList<Message> forwardMessages, String chatId, String chatName) {
+    public static Intent newIntent2(Context context, ArrayList<Message> forwardMessages, String chatId, String chatName,String name_display) {
         Intent intent = new Intent(context, ChatActivity.class);
         intent.putExtra(EXTRA_DATA_CHAT_USER_ID, chatId);
         intent.putExtra(EXTRA_DATA_CHAT_USER_NAME, chatName);
+        intent.putExtra(EXTRA_DATA_CHAT_NAME_Display, name_display);
         if (forwardMessages == null)
             forwardMessages = new ArrayList<>();
-        intent.putParcelableArrayListExtra(EXTRA_DATA_LIST, forwardMessages);
+        intent.putParcelableArrayListExtra(EXTRA_DATA_USER_LIST, forwardMessages);
         return intent;
     }
 

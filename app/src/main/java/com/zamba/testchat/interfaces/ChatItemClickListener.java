@@ -12,6 +12,8 @@ import com.zamba.testchat.models.User;
 public interface ChatItemClickListener {
     void onChatItemClick(String chatId, String chatName, int position, View userImage);
 
+    void onChatItemUserClick(String chatId, String chatName,String chatNamedisplay, int position, View userImage);
+
     void onChatItemClick(Group group, int position, View userImage);
 
     void placeCall(boolean callIsVideo, User user);

@@ -14,6 +14,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SwitchCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +44,8 @@ import java.util.ArrayList;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
+import static com.zamba.testchat.activities.ChatDetailActivity.check_user_name;
+
 public class ChatDetailFragment extends Fragment implements GroupNewParticipantsAdapter.ParticipantClickListener {
     private static final int CALL_REQUEST_CODE = 911;
     private OnUserDetailFragmentInteraction mListener;
@@ -52,6 +55,8 @@ public class ChatDetailFragment extends Fragment implements GroupNewParticipants
     private TextView userPhone, userStatus;
     private ImageView userPhoneClick;
     private SwitchCompat muteNotificationToggle;
+
+
 
     private ArrayList<Message> attachments;
 
@@ -299,7 +304,18 @@ public class ChatDetailFragment extends Fragment implements GroupNewParticipants
 
     private void setData() {
         userStatus.setText(user.getStatus());
-        userPhone.setText(user.getId());
+        Log.e(CONFIRM_TAG," USER NAME  "+check_user_name);
+        Log.e(CONFIRM_TAG," USER NAME  "+user.getUser_name());
+        Log.e(CONFIRM_TAG," USER NAME  "+user.getNameToDisplay());
+        if(check_user_name.equalsIgnoreCase(user.getUser_name()))
+        {
+            userPhone.setVisibility(View.GONE);
+        }
+        else if (check_user_name.equalsIgnoreCase(user.getNameToDisplay())){
+
+            userPhone.setVisibility(View.VISIBLE);
+            userPhone.setText(user.getId());
+        }
         muteNotificationToggle.setChecked(helper.isUserMute(user.getId()));
     }
 

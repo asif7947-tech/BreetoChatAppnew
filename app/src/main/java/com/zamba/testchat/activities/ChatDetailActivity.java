@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -78,6 +79,8 @@ public class ChatDetailActivity extends BaseActivity implements OnUserDetailFrag
     private static final int REQUEST_CODE_PICKER = 4321;
     private static final int REQUEST_CODE_MEDIA_PERMISSION = 999;
     private ChatDetailFragment fragmentUserDetail;
+
+    public static String check_user_name="";
     private View done;
 
     private String pickerPath;
@@ -388,6 +391,12 @@ public class ChatDetailActivity extends BaseActivity implements OnUserDetailFrag
         });
 
         userName.setText(user != null ? user.getNameToDisplay() : group.getName());
+
+        check_user_name=userName.getText().toString();
+        Log.e(TAG_DETAIL," USER NAME  "+check_user_name);
+        Log.e(TAG_DETAIL," USER NAME  "+user.getNameInPhone());
+        Log.e(TAG_DETAIL," USER NAME  "+user.getNameToDisplay());
+        Log.e(TAG_DETAIL," USER NAME  "+user.getUser_name());
         setUserData();
     }
 
