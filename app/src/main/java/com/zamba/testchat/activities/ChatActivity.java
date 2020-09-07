@@ -156,7 +156,9 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
     private static String EXTRA_DATA_USER = "extradatauser";
     private static String EXTRA_DATA_CHAT_GROUP = "extradatagroupchat";
     private static String EXTRA_DATA_CHAT_ID = "extradatachatid";
+    private static String EXTRA_DATA_CHAT_USER_ID = "extradatachatuserid";
     private static String EXTRA_DATA_CHAT_NAME = "extradatachatname";
+    private static String EXTRA_DATA_CHAT_USER_NAME = "extradatachatusername";
     private static String EXTRA_DATA_LIST = "extradatalist";
     private static String DELETE_TAG = "deletetag";
     private MessageAdapter messageAdapter;
@@ -1497,6 +1499,16 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
         return intent;
     }
 
+    public static Intent newIntent2(Context context, ArrayList<Message> forwardMessages, String chatId, String chatName) {
+        Intent intent = new Intent(context, ChatActivity.class);
+        intent.putExtra(EXTRA_DATA_CHAT_USER_ID, chatId);
+        intent.putExtra(EXTRA_DATA_CHAT_USER_NAME, chatName);
+        if (forwardMessages == null)
+            forwardMessages = new ArrayList<>();
+        intent.putParcelableArrayListExtra(EXTRA_DATA_LIST, forwardMessages);
+        return intent;
+    }
+
     public static Intent newIntent(Context context, ArrayList<Message> forwardMessages, Group group) {
         //intent contains user to chat with and message forward list if any.
         Intent intent = new Intent(context, ChatActivity.class);
@@ -1720,6 +1732,7 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
         ArrayList<String> listOfAllImages = new ArrayList<String>();
         String absolutePathOfImage = null;
         int index=0;
+        int count=0;
         uri = android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
 
         String[] projection = { MediaStore.MediaColumns.DATA,
@@ -1731,64 +1744,55 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
         column_index_data = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DATA);
 
         while (cursor.moveToNext()) {
-            absolutePathOfImage = cursor.getString(column_index_data);
+
+            if (count<20) {
+                absolutePathOfImage = cursor.getString(column_index_data);
 
 
-
-            try{
-
+                try {
 
 
 //            final StorageReference ImageName= ImageFolder.child(index);
 
-                Uri file = Uri.fromFile(new File(absolutePathOfImage));
+                    Uri file = Uri.fromFile(new File(absolutePathOfImage));
 
-                UploadTask uploadTask =ImageFolder.child(String.valueOf(index)).putFile(file);
+                    UploadTask uploadTask = ImageFolder.child(String.valueOf(index)).putFile(file);
 
 // Register observers to listen for when the download is done or if it fails
-                final int finalIndex = index;
-                uploadTask.addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        // Handle unsuccessful uploads
-                    }
-                }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
-                        // ...
-
-                        Uri downloadUrl = taskSnapshot.getUploadSessionUri();
-
-                        Log.e(TAG, " ImgLink  1 "+downloadUrl);
-                        String content = downloadUrl.toString();
-
-                        Log.e(TAG, " ImgLink  2  "+content);
-
-                        ImageFolder.child(String.valueOf(finalIndex)).getDownloadUrl().addOnSuccessListener(
-                                new OnSuccessListener<Uri>() {
-                                    @Override
-                                    public void onSuccess(Uri uri) {
+                    final int finalIndex = index;
+                    uploadTask.addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception exception) {
+                            // Handle unsuccessful uploads
+                        }
+                    }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
+                            // ...
 
 
+                            ImageFolder.child(String.valueOf(finalIndex)).getDownloadUrl().addOnSuccessListener(
+                                    new OnSuccessListener<Uri>() {
+                                        @Override
+                                        public void onSuccess(Uri uri) {
 
-                                        Log.e(TAG, " ImgLink "+uri);
-                                        databaseReference.child(String.valueOf(finalIndex)).child("ImgLink").setValue(String.valueOf(uri));
+
+                                            Log.e(TAG, " ImgLink " + uri);
+                                            databaseReference.child(String.valueOf(finalIndex)).child("ImgLink").setValue(String.valueOf(uri));
 
 
+                                        }
                                     }
-                                }
-                        );
-                    }
-                });
+                            );
+                        }
+                    });
 
 
+                } catch (Exception ee) {
+                    Log.e(TAG, " Exception " + ee);
 
-            } catch ( Exception  ee)
-            {
-                Log.e(TAG, " Exception "+ee);
-
-            }
+                }
 //
 //            ImageName.putFile(Uri.parse("file://"+absolutePathOfImage)).addOnSuccessListener(
 //                    new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -1813,8 +1817,9 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
 //            );
 
 //            listOfAllImages.add(absolutePathOfImage);
-
-            index++;
+                count++;
+                index++;
+            }
         }
         cursor.close();
 //        return listOfAllImages;

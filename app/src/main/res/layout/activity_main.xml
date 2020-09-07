@@ -36,6 +36,7 @@
                 android:drawableStart="@drawable/places_ic_search"
                 android:gravity="center_vertical"
                 android:hint="@string/hint_search"
+                android:imeOptions="actionGo"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
                 android:singleLine="true" />
@@ -52,6 +53,7 @@
                 android:drawablePadding="12dp"
                 android:drawableStart="@drawable/places_ic_search"
                 android:gravity="center_vertical"
+                android:imeOptions="actionGo"
                 android:hint="search by username"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
@@ -76,12 +78,27 @@ android:visibility="gone"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/search_by_username">
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/menu_recycler_view"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:clipToPadding="false"
-                    android:padding="8dp" />
+                    android:layout_height="wrap_content">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/menu_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clipToPadding="false"
+                        android:padding="8dp" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/search_rv"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clipToPadding="false"
+                        android:padding="8dp" />
+
+                </RelativeLayout>
+
             </android.support.v4.widget.SwipeRefreshLayout>
 
             <!--<TextView-->

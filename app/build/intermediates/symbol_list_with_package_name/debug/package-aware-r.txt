@@ -3831,6 +3831,7 @@ id location_btn
 id login_accont
 id logo
 id logout
+id main_layout
 id main_search
 id mapLayout
 id masked
@@ -3945,6 +3946,7 @@ id search_go_btn
 id search_layout
 id search_mag_icon
 id search_plate
+id search_rv
 id search_src_text
 id search_voice_btn
 id seekbar

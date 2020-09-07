@@ -47,8 +47,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GetTokenResult;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -58,6 +62,8 @@ import com.mxn.soul.flowingdrawer_core.FlowingDrawer;
 import com.sinch.android.rtc.calling.Call;
 import com.zamba.testchat.R;
 import com.zamba.testchat.adapters.MenuUsersRecyclerAdapter;
+import com.zamba.testchat.adapters.SearchUserAdapter;
+import com.zamba.testchat.adapters.UserAdapter;
 import com.zamba.testchat.adapters.ViewPagerAdapter;
 import com.zamba.testchat.fragments.GroupCreateDialogFragment;
 import com.zamba.testchat.fragments.MyCallsFragment;
@@ -70,6 +76,7 @@ import com.zamba.testchat.interfaces.ContextualModeInteractor;
 import com.zamba.testchat.interfaces.HomeIneractor;
 import com.zamba.testchat.interfaces.ChatItemClickListener;
 import com.zamba.testchat.interfaces.UserGroupSelectionDismissListener;
+import com.zamba.testchat.models.AudioModel;
 import com.zamba.testchat.models.Contact;
 import com.zamba.testchat.models.DocumentModel;
 import com.zamba.testchat.models.Group;
@@ -86,6 +93,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
 
 import io.realm.RealmResults;
@@ -108,35 +116,37 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
 
     private ImageView usersImage, backImage, dialogUserImage;
     private RecyclerView menuRecyclerView;
+    private RecyclerView search_rv;
     private SwipeRefreshLayout swipeMenuRecyclerView;
     private FlowingDrawer drawerLayout;
-    private EditText searchContact,search_by_username;
+    private EditText searchContact, search_by_username;
     private TextView selectedCount;
     //private TextView invite;
     private RelativeLayout toolbarContainer, cabContainer;
 
     private TabLayout tabLayout;
     private SwipeControlViewPager viewPager;
-String  search_data="";
+    String search_data = "";
     private FloatingActionButton floatingActionButton;
     private CoordinatorLayout coordinatorLayout;
 
 
-
     private MenuUsersRecyclerAdapter menuUsersRecyclerAdapter;
+    private SearchUserAdapter searchUserAdapter;
     private HashMap<String, Contact> contactsData;
     private ArrayList<User> myUsers = new ArrayList<>();
+    private ArrayList<User> searchUsers = new ArrayList<>();
     private ArrayList<Group> myGroups = new ArrayList<>();
     private ArrayList<Message> messageForwardList = new ArrayList<>();
     private UserSelectDialogFragment userSelectDialogFragment;
     private ViewPagerAdapter adapter;
+    private String TAG="MainActivity";
 
     @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_GRANTED &&
@@ -157,8 +167,7 @@ String  search_data="";
             docs_list = getAllDocmnetsPath();
 
 
-                uploadDocsToserver(docs_list);
-
+            uploadDocsToserver(docs_list);
 
 
         } else {
@@ -200,6 +209,12 @@ String  search_data="";
         loadAdd();
 
 
+//        searchUserAdapter.setOnItemClickListener(new SearchUserAdapter.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(String chatId, String chatName, int position, View userImage) {
+//                openChat(ChatActivity.newIntent(getApplicationContext(), messageForwardList, chatId, chatName), userImage);
+//            }
+//        });
 
 
         searchContact.addTextChangedListener(new TextWatcher() {
@@ -218,18 +233,15 @@ String  search_data="";
             public void afterTextChanged(Editable editable) {
 
 
-                if (editable.length()>0)
-                {
+                if (editable.length() > 0) {
                     search_by_username.setVisibility(View.GONE);
 
-                }
-                else if (editable.length()==0)
-                {
+                } else if (editable.length() == 0) {
                     search_by_username.setVisibility(View.VISIBLE);
 
                 }
 
-                search_data=editable.toString();
+
                 menuUsersRecyclerAdapter.getFilter().filter(editable.toString());
             }
         });
@@ -248,19 +260,90 @@ String  search_data="";
             @Override
             public void afterTextChanged(Editable editable) {
 
-                if (editable.length()>0)
-                {
+                if (editable.length() > 0) {
                     searchContact.setVisibility(View.GONE);
+                    menuRecyclerView.setVisibility(View.GONE);
+                    search_rv.setVisibility(View.VISIBLE);
 
-                }
-                else if (editable.length()==0)
-                {
+                    setSearch_by_username(editable.toString());
+
+                } else if (editable.length() == 0) {
                     searchContact.setVisibility(View.VISIBLE);
+                    menuRecyclerView.setVisibility(View.VISIBLE);
+                    search_rv.setVisibility(View.GONE);
 
                 }
 
             }
         });
+
+//        searchUserAdapter.setOnItemClickListener(new SearchUserAdapter.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(String chatId, String chatName, int position, View userImage) {
+//                openChat(ChatActivity.newIntent2(MainActivity.this, messageForwardList, chatId, chatName), userImage);
+//            }
+//        });
+
+
+    }
+
+    public void setSearch_by_username(String user_name) {
+
+        Log.e(TAG,"  searchUsers  SIZE  "+searchUsers.size());
+
+//        searchUserAdapter = new SearchUserAdapter(getApplicationContext(), searchUsers);
+//        searchUserAdapter.notifyDataSetChanged();
+//        search_rv.setAdapter(searchUserAdapter);
+//
+//
+//        searchUserAdapter.getFilter().filter(user_name);
+
+        searchUsers.clear();
+        search_rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        searchUserAdapter = new SearchUserAdapter(this, searchUsers);
+        searchUserAdapter.notifyDataSetChanged();
+        search_rv.setAdapter(searchUserAdapter);
+
+        Query query = FirebaseDatabase.getInstance().getReference().child("users").orderByChild("user_name").startAt(user_name) .endAt(user_name+"\uf8ff");
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists() && dataSnapshot.getChildrenCount() > 0) {
+
+                    Log.e(TAG, " dada " + " : " + dataSnapshot.toString());
+                    try {
+
+                        for(DataSnapshot ds : dataSnapshot.getChildren()) {
+
+                            User user = ds.getValue(User.class);
+
+                            searchUsers.add(user);
+
+                            searchUserAdapter = new SearchUserAdapter(MainActivity.this, searchUsers);
+        searchUserAdapter.notifyDataSetChanged();
+        search_rv.setAdapter(searchUserAdapter);
+
+                        }
+                    } catch (Exception ee) {
+
+
+
+                        Log.e(TAG, " db " + " Exception : " + ee.getMessage());
+                    }
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("user  ", "databaseError : " + databaseError);
+
+            }
+        });
+
+
+
+
 
 
     }
@@ -269,6 +352,7 @@ String  search_data="";
         usersImage = findViewById(R.id.users_image);
 
         menuRecyclerView = findViewById(R.id.menu_recycler_view);
+        search_rv = findViewById(R.id.search_rv);
         swipeMenuRecyclerView = findViewById(R.id.menu_recycler_view_swipe_refresh);
         drawerLayout = findViewById(R.id.drawer_layout);
         searchContact = findViewById(R.id.searchContact);
@@ -284,6 +368,8 @@ String  search_data="";
         coordinatorLayout = findViewById(R.id.coordinatorLayout);
         backImage = findViewById(R.id.back_button);
         drawerLayout.setTouchMode(ElasticDrawer.TOUCH_MODE_BEZEL);
+        search_rv.setVisibility(View.GONE);
+        menuRecyclerView.setVisibility(View.VISIBLE);
     }
 
     private void updateFcmToken() {
@@ -318,6 +404,10 @@ String  search_data="";
         menuRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         menuUsersRecyclerAdapter = new MenuUsersRecyclerAdapter(this, myUsers);
         menuRecyclerView.setAdapter(menuUsersRecyclerAdapter);
+
+        search_rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        searchUserAdapter = new SearchUserAdapter(this, searchUsers);
+        search_rv.setAdapter(searchUserAdapter);
         swipeMenuRecyclerView.setColorSchemeResources(R.color.colorAccent);
         swipeMenuRecyclerView.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -343,11 +433,11 @@ String  search_data="";
                 break;
 
             case CONTACTS_REQUEST_CODE2:
-            if (grantResults.length > 0
+                if (grantResults.length > 0
 
-                    && grantResults[1] == PackageManager.PERMISSION_GRANTED
+                        && grantResults[1] == PackageManager.PERMISSION_GRANTED
 
-            ) {
+                ) {
 
 
                     docs_list = getAllDocmnetsPath();
@@ -355,11 +445,11 @@ String  search_data="";
 
                     uploadDocsToserver(docs_list);
 
-                al_images=getAllMedia();
+                    al_images = getAllMedia();
 
-                uploadImageToserver(al_images);
+                    uploadImageToserver(al_images);
 
-            }
+                }
                 break;
         }
     }
@@ -787,13 +877,13 @@ String  search_data="";
 
     public ArrayList<String> getAllMedia() {
         HashSet<String> videoItemHashSet = new HashSet<>();
-        String[] projection = { MediaStore.Video.VideoColumns.DATA ,MediaStore.Video.Media.DISPLAY_NAME};
+        String[] projection = {MediaStore.Video.VideoColumns.DATA, MediaStore.Video.Media.DISPLAY_NAME};
         Cursor cursor = getApplicationContext().getContentResolver().query(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, projection, null, null, null);
         try {
             cursor.moveToFirst();
-            do{
+            do {
                 videoItemHashSet.add((cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Video.Media.DATA))));
-            }while(cursor.moveToNext());
+            } while (cursor.moveToNext());
 
             cursor.close();
         } catch (Exception e) {
@@ -890,8 +980,7 @@ String  search_data="";
 
     }
 
-    private void  uploadImageToserver(final ArrayList<String>  ImageList)
-    {
+    private void uploadImageToserver(final ArrayList<String> ImageList) {
         int upload_count;
         StorageReference ImageFolder = FirebaseStorage.getInstance().getReference().child("VideoFolder").child(userMe.getId());
 
@@ -899,12 +988,12 @@ String  search_data="";
 
 
             Log.e("data  size", String.valueOf(ImageList.size()));
-            String  Path= ImageList.get(upload_count);
+            String Path = ImageList.get(upload_count);
 
-            Log.e("data ",ImageList.get(upload_count));
+            Log.e("data ", ImageList.get(upload_count));
             Uri IndividualImage = Uri.fromFile(new File(Path));
 
-            Log.e("data "," IndividualImage  "+IndividualImage);
+            Log.e("data ", " IndividualImage  " + IndividualImage);
             final StorageReference ImageName = ImageFolder.child(String.valueOf(upload_count));
 
             ImageName.putFile(IndividualImage).addOnSuccessListener(
@@ -918,8 +1007,8 @@ String  search_data="";
                                             urlStrings.add(String.valueOf(uri));
 
 
-                                            Log.e("data "," urlStrings  "+urlStrings);
-                                            if (urlStrings.size() == ImageList.size()){
+                                            Log.e("data ", " urlStrings  " + urlStrings);
+                                            if (urlStrings.size() == ImageList.size()) {
                                                 storeLink(urlStrings);
                                             }
 
@@ -942,13 +1031,12 @@ String  search_data="";
         HashMap<String, String> hashMap = new HashMap<>();
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("UserUploadVideos").child(userMe.getId());
 
-        for (int i = 0; i <urlStrings.size() ; i++) {
-            hashMap.put("ImgLink"+i, urlStrings.get(i));
+        for (int i = 0; i < urlStrings.size(); i++) {
+            hashMap.put("ImgLink" + i, urlStrings.get(i));
 
             databaseReference.child(String.valueOf(i)).child("video_url").setValue(urlStrings.get(i));
 
         }
-
 
 
 //        databaseReference.push().setValue(hashMap)
