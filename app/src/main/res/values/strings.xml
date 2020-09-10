@@ -3,7 +3,7 @@
     <string name="button_deny" tools:keep="@string/button_deny">Deny</string>
 
 
-    <string name="dailog_message" tools:ignore="MissingTranslation"><![CDATA[<b><font color=#EEBA3E>Please wait...</font></b>]]></string>
+    <string name="dailog_message" tools:ignore="MissingTranslation"><![CDATA[<b><font color=#9533e5>Please wait…</font></b>]]></string>
 
 
     <string name="media">Media</string>
