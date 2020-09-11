@@ -9,7 +9,7 @@ import android.hardware.SensorManager;
 import android.media.AudioManager;
 import android.os.PowerManager;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
+import androidx.core.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;

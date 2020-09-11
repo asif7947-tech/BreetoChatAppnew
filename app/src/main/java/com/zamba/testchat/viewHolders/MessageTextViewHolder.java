@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.graphics.Color;
 import android.os.Handler;
 
-import android.support.v4.content.ContextCompat;
+import androidx.core.content.ContextCompat;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;

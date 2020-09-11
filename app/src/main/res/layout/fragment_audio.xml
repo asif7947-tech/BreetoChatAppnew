@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".fragments.ImageFragment">
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_marginTop="10dp"
         android:id="@+id/recyclerViewImage"
         android:textColor="@color/colorPrimary"

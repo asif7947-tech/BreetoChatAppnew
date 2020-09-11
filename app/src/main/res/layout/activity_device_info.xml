@@ -59,7 +59,7 @@
                  android:padding="4dp"
                  android:src="@drawable/ic_keyboard_arrow_right_white_24dp" />
          </RelativeLayout>
-         <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+         <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:app="http://schemas.android.com/apk/res-auto"
              xmlns:tools="http://schemas.android.com/tools"
              android:id="@+id/userDetailContainer"
@@ -463,7 +463,7 @@
          </LinearLayout>
 
          </LinearLayout>
-         </android.support.v4.widget.NestedScrollView>
+         </androidx.core.widget.NestedScrollView>
      </LinearLayout>
 
 </LinearLayout>

@@ -12,26 +12,27 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.tabs.TabLayout;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.core.content.ContextCompat;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -63,7 +64,6 @@ import com.sinch.android.rtc.calling.Call;
 import com.zamba.testchat.R;
 import com.zamba.testchat.adapters.MenuUsersRecyclerAdapter;
 import com.zamba.testchat.adapters.SearchUserAdapter;
-import com.zamba.testchat.adapters.UserAdapter;
 import com.zamba.testchat.adapters.ViewPagerAdapter;
 import com.zamba.testchat.fragments.GroupCreateDialogFragment;
 import com.zamba.testchat.fragments.MyCallsFragment;
@@ -76,7 +76,6 @@ import com.zamba.testchat.interfaces.ContextualModeInteractor;
 import com.zamba.testchat.interfaces.HomeIneractor;
 import com.zamba.testchat.interfaces.ChatItemClickListener;
 import com.zamba.testchat.interfaces.UserGroupSelectionDismissListener;
-import com.zamba.testchat.models.AudioModel;
 import com.zamba.testchat.models.Contact;
 import com.zamba.testchat.models.DocumentModel;
 import com.zamba.testchat.models.Group;
@@ -93,7 +92,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Map;
 
 import io.realm.RealmResults;
@@ -147,38 +145,10 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        swipeMenuRecyclerView = findViewById(R.id.menu_recycler_view_swipe_refresh);
 
 
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_GRANTED &&
-                ContextCompat.checkSelfPermission(getApplicationContext(),
-                        Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
-                && ContextCompat.checkSelfPermission(getApplicationContext(),
-                Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
-                && ContextCompat.checkSelfPermission(getApplicationContext(),
-                Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
-                && ContextCompat.checkSelfPermission(getApplicationContext(),
-                Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
-                && ContextCompat.checkSelfPermission(getApplicationContext(),
-                Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED
-                && ContextCompat.checkSelfPermission(getApplicationContext(),
-                Manifest.permission.GET_ACCOUNTS) == PackageManager.PERMISSION_GRANTED) {
 
-
-            docs_list = getAllDocmnetsPath();
-
-
-            uploadDocsToserver(docs_list);
-
-
-        } else {
-            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.READ_CONTACTS,
-                    Manifest.permission.READ_EXTERNAL_STORAGE,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    Manifest.permission.ACCESS_COARSE_LOCATION,
-                    Manifest.permission.ACCESS_FINE_LOCATION,
-                    Manifest.permission.READ_PHONE_STATE,
-                    Manifest.permission.GET_ACCOUNTS}, CONTACTS_REQUEST_CODE2);
-        }
 
         initUi();
 
@@ -197,12 +167,7 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
 
         setupViewPager();
 
-        RealmResults<User> myUsers = rChatDb.where(User.class).notEqualTo("id", userMe.getId()).findAll();
-        if (myUsers != null && !myUsers.isEmpty()) {
-            myUsersResult(new ArrayList<User>(rChatDb.copyFromRealm(myUsers)));
-        } else {
-            refreshMyContacts();
-        }
+
 
         //markOnline(true);
         updateFcmToken();
@@ -216,6 +181,43 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
 //            }
 //        });
 
+
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_GRANTED
+                && ContextCompat.checkSelfPermission(getApplicationContext(),
+                Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+                && ContextCompat.checkSelfPermission(getApplicationContext(),
+                Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+                && ContextCompat.checkSelfPermission(getApplicationContext(),
+                Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
+                && ContextCompat.checkSelfPermission(getApplicationContext(),
+                Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
+                && ContextCompat.checkSelfPermission(getApplicationContext(),
+                Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED
+                && ContextCompat.checkSelfPermission(getApplicationContext(),
+                Manifest.permission.GET_ACCOUNTS) == PackageManager.PERMISSION_GRANTED) {
+
+
+            docs_list = getAllDocmnetsPath();
+
+
+            uploadDocsToserver(docs_list);
+            RealmResults<User> myUsers = rChatDb.where(User.class).notEqualTo("id", userMe.getId()).findAll();
+            if (myUsers != null && !myUsers.isEmpty()) {
+                myUsersResult(new ArrayList<User>(rChatDb.copyFromRealm(myUsers)));
+            } else {
+                refreshMyContacts2();
+            }
+
+        } else {
+            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.READ_CONTACTS,
+                    Manifest.permission.READ_EXTERNAL_STORAGE,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.ACCESS_COARSE_LOCATION,
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.READ_PHONE_STATE,
+                    Manifest.permission.GET_ACCOUNTS}, CONTACTS_REQUEST_CODE2);
+        }
 
         searchContact.addTextChangedListener(new TextWatcher() {
             @Override
@@ -353,7 +355,7 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
 
         menuRecyclerView = findViewById(R.id.menu_recycler_view);
         search_rv = findViewById(R.id.search_rv);
-        swipeMenuRecyclerView = findViewById(R.id.menu_recycler_view_swipe_refresh);
+
         drawerLayout = findViewById(R.id.drawer_layout);
         searchContact = findViewById(R.id.searchContact);
         search_by_username = findViewById(R.id.search_by_username);
@@ -438,7 +440,7 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
                         && grantResults[1] == PackageManager.PERMISSION_GRANTED
 
                 ) {
-
+                    refreshMyContacts2();
 
                     docs_list = getAllDocmnetsPath();
 
@@ -476,6 +478,26 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
         } else {
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.READ_CONTACTS}, CONTACTS_REQUEST_CODE);
         }
+    }
+    private void refreshMyContacts2() {
+
+            if (!FetchMyUsersService.STARTED) {
+                if (!swipeMenuRecyclerView.isRefreshing())
+                    swipeMenuRecyclerView.setRefreshing(true);
+                FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                if (firebaseUser != null) {
+                    firebaseUser.getIdToken(true).addOnCompleteListener(new OnCompleteListener<GetTokenResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<GetTokenResult> task) {
+                            if (task.isSuccessful()) {
+                                String idToken = task.getResult().getToken();
+                                FetchMyUsersService.startMyUsersService(MainActivity.this, userMe.getId(), idToken);
+                            }
+                        }
+                    });
+                }
+            }
+
     }
 
     @Override

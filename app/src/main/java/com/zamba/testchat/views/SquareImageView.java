@@ -7,7 +7,7 @@ import android.util.AttributeSet;
  * Created by mayank on 6/11/16.
  */
 
-public class SquareImageView extends android.support.v7.widget.AppCompatImageView {
+public class SquareImageView extends androidx.appcompat.widget.AppCompatImageView {
 
     public SquareImageView(Context context) {
         super(context);

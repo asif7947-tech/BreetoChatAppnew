@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.Context;
 import android.database.Cursor;
 import android.provider.ContactsContract;
-import android.support.v4.content.LocalBroadcastManager;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import android.util.Patterns;
 
 import com.google.firebase.database.FirebaseDatabase;

@@ -71,11 +71,8 @@
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
-        </receiver> <!-- https://fabric.io/kits/android/crashlytics/install -->
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="17b40bdf5ff3c54ee2726dfcee4d7d8ccf5cd79c" /> <!-- https://developers.google.com/places/android-sdk/signup -->
-        <meta-data
+        </receiver>
+            <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBQm6W7VOsx5V9m2GYmfhUDvBb15IzT9UE" />
         <meta-data

@@ -74,7 +74,7 @@
             </RelativeLayout>
         </FrameLayout>
 
-        <android.support.design.widget.TabLayout
+        <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
             ads:adUnitId="@string/admob_banner_id" />
     </LinearLayout>
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addConversation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

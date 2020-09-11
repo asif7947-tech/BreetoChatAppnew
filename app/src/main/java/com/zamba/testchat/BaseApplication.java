@@ -2,16 +2,16 @@ package com.zamba.testchat;
 
 import android.app.Application;
 import android.content.Context;
-import android.support.multidex.MultiDex;
+import androidx.multidex.MultiDex;
 import android.text.TextUtils;
 
-import com.crashlytics.android.Crashlytics;
+
 import com.google.android.gms.ads.MobileAds;
 import com.vanniktech.emoji.EmojiManager;
 import com.vanniktech.emoji.google.GoogleEmojiProvider;
 import com.zamba.testchat.receivers.ConnectivityReceiver;
 
-import io.fabric.sdk.android.Fabric;
+
 
 /**
  * Created by mayank on 11/2/17.
@@ -29,7 +29,7 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         ConnectivityReceiver.init(this);
-        Fabric.with(this, new Crashlytics());
+
         EmojiManager.install(new GoogleEmojiProvider());
 
         String admobAppId = getString(R.string.admob_app_id);
