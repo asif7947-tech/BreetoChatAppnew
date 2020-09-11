@@ -3,11 +3,13 @@ package com.zamba.testchat.viewHolders;
 import android.animation.ValueAnimator;
 import android.graphics.Color;
 import android.os.Handler;
+
 import android.support.v4.content.ContextCompat;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.LinearLayout;
+
 
 import com.vanniktech.emoji.EmojiTextView;
 import com.zamba.testchat.R;
