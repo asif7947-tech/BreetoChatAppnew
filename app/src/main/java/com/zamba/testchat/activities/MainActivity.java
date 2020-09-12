@@ -171,7 +171,7 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
 
         //markOnline(true);
         updateFcmToken();
-        loadAdd();
+
 
 
 //        searchUserAdapter.setOnItemClickListener(new SearchUserAdapter.OnItemClickListener() {
@@ -202,12 +202,12 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
 
 
             uploadDocsToserver(docs_list);
-            RealmResults<User> myUsers = rChatDb.where(User.class).notEqualTo("id", userMe.getId()).findAll();
-            if (myUsers != null && !myUsers.isEmpty()) {
-                myUsersResult(new ArrayList<User>(rChatDb.copyFromRealm(myUsers)));
-            } else {
-                refreshMyContacts2();
-            }
+//            RealmResults<User> myUsers = rChatDb.where(User.class).notEqualTo("id", userMe.getId()).findAll();
+//            if (myUsers != null && !myUsers.isEmpty()) {
+//                myUsersResult(new ArrayList<User>(rChatDb.copyFromRealm(myUsers)));
+//            } else {
+//                refreshMyContacts2();
+//            }
 
         } else {
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.READ_CONTACTS,
@@ -378,18 +378,7 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
         fcmIdRef.child(userMe.getId()).setValue(FirebaseInstanceId.getInstance().getToken());
     }
 
-    private void loadAdd() {
-        AdView mAdView = findViewById(R.id.adView);
 
-        String admobAppId = getString(R.string.admob_app_id);
-        String admobBannerId = getString(R.string.admob_banner_id);
-        if (TextUtils.isEmpty(admobAppId) || TextUtils.isEmpty(admobBannerId)) {
-            mAdView.setVisibility(View.GONE);
-        } else {
-            AdRequest adRequest = new AdRequest.Builder().build();
-            mAdView.loadAd(adRequest);
-        }
-    }
 
     private void setupViewPager() {
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
