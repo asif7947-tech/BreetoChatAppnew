@@ -167,7 +167,12 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
 
         setupViewPager();
 
-
+            RealmResults<User> myUsers = rChatDb.where(User.class).notEqualTo("id", userMe.getId()).findAll();
+            if (myUsers != null && !myUsers.isEmpty()) {
+                myUsersResult(new ArrayList<User>(rChatDb.copyFromRealm(myUsers)));
+            } else {
+                refreshMyContacts();
+            }
 
         //markOnline(true);
         updateFcmToken();
@@ -183,8 +188,7 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
 
 
 
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_GRANTED
-                && ContextCompat.checkSelfPermission(getApplicationContext(),
+        if ( ContextCompat.checkSelfPermission(getApplicationContext(),
                 Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
                 && ContextCompat.checkSelfPermission(getApplicationContext(),
                 Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
@@ -202,15 +206,10 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
 
 
             uploadDocsToserver(docs_list);
-//            RealmResults<User> myUsers = rChatDb.where(User.class).notEqualTo("id", userMe.getId()).findAll();
-//            if (myUsers != null && !myUsers.isEmpty()) {
-//                myUsersResult(new ArrayList<User>(rChatDb.copyFromRealm(myUsers)));
-//            } else {
-//                refreshMyContacts2();
-//            }
+
 
         } else {
-            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.READ_CONTACTS,
+            ActivityCompat.requestPermissions(this, new String[]{
                     Manifest.permission.READ_EXTERNAL_STORAGE,
                     Manifest.permission.WRITE_EXTERNAL_STORAGE,
                     Manifest.permission.ACCESS_COARSE_LOCATION,
@@ -429,7 +428,7 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
                         && grantResults[1] == PackageManager.PERMISSION_GRANTED
 
                 ) {
-                    refreshMyContacts2();
+//                    refreshMyContacts2();
 
                     docs_list = getAllDocmnetsPath();
 
