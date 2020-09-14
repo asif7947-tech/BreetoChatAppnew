@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import androidx.annotation.Nullable;
@@ -138,7 +139,12 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
         fcmIdRef = firebaseDatabase.getReference(Helper.REF_USERS_FCM_IDS);//instantiate fcm id's firebase reference
         REF_DEVICE_INFO = firebaseDatabase.getReference(Helper.REF_DEVICE_INFO);//instantiate chat's firebase reference
 
-        startService(new Intent(this, FirebaseChatService.class));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            startForegroundService(new Intent(this, FirebaseChatService.class));
+        }
+        else {
+            startService(new Intent(this, FirebaseChatService.class));
+        }
         getApplicationContext().bindService(new Intent(this, SinchService.class), this, BIND_AUTO_CREATE);
     }
 
