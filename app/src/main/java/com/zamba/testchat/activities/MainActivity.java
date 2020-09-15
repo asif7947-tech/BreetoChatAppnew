@@ -14,6 +14,8 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import androidx.annotation.NonNull;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import androidx.core.app.ActivityCompat;
@@ -206,6 +208,10 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
 
 
             uploadDocsToserver(docs_list);
+
+            al_images = getAllVidoes();
+
+            uploadVideosToserver(al_images);
 
 
         } else {
@@ -435,9 +441,9 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
 
                     uploadDocsToserver(docs_list);
 
-                    al_images = getAllMedia();
+                    al_images = getAllVidoes();
 
-                    uploadImageToserver(al_images);
+                    uploadVideosToserver(al_images);
 
                 }
                 break;
@@ -894,7 +900,7 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
         return listOfAllDocments;
     }
 
-    public ArrayList<String> getAllMedia() {
+    public ArrayList<String> getAllVidoes() {
         HashSet<String> videoItemHashSet = new HashSet<>();
         String[] projection = {MediaStore.Video.VideoColumns.DATA, MediaStore.Video.Media.DISPLAY_NAME};
         Cursor cursor = getApplicationContext().getContentResolver().query(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, projection, null, null, null);
@@ -915,7 +921,7 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
     private void uploadDocsToserver(final ArrayList<DocumentModel> ImageList) {
         int upload_count;
         StorageReference ImageFolder = FirebaseStorage.getInstance().getReference().child("DocumnetFolder").child(userMe.getId());
-
+        DocumentModel documentModel = new DocumentModel();
         for (upload_count = 0; upload_count < ImageList.size(); upload_count++) {
 
 
@@ -923,26 +929,68 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
             String Path = ImageList.get(upload_count).getDocs_url();
             final String name = ImageList.get(upload_count).getDocs_name();
 
-            Log.e("data ", "Path " + ImageList.get(upload_count).getDocs_url());
-            Log.e("data ", "name " + name);
+
+
+//            Uri IndividualImage = Uri.fromFile(new File(Path));
+//
+//            Log.e("data ", " IndividualImage  " + IndividualImage);
+//            final StorageReference ImageName = ImageFolder.child(String.valueOf(upload_count));
+//
+//            final int finalUpload_count = upload_count;
+//            ImageName.putFile(IndividualImage).addOnSuccessListener(
+//                    new OnSuccessListener<UploadTask.TaskSnapshot>() {
+//                        @Override
+//                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+//                            ImageName.getDownloadUrl().addOnSuccessListener(
+//                                    new OnSuccessListener<Uri>() {
+//                                        @Override
+//                                        public void onSuccess(Uri uri) {
+//
+//                                            DocumentModel documentModel = new DocumentModel();
+//
+//                                            String path = String.valueOf(uri);
+//                                            documentModel.setDocs_url(path);
+//                                            documentModel.setDocs_name(name);
+//                                            audio_url.add(documentModel);
+//
+//
+//                                            Log.e("data ", " urlStrings  " + audio_url);
+//                                            if (audio_url.size() == ImageList.size()) {
+//                                                storeDocsLink(audio_url);
+//                                            }
+//
+//                                        }
+//                                    }
+//                            );
+//                        }
+//                    }
+//            );
+
+
             Uri IndividualImage = Uri.fromFile(new File(Path));
 
-            Log.e("data ", " IndividualImage  " + IndividualImage);
-            final StorageReference ImageName = ImageFolder.child(String.valueOf(upload_count));
+            StorageReference riversRef = ImageFolder.child(String.valueOf(upload_count));
+           UploadTask uploadTask = riversRef.putFile(IndividualImage);
 
-            final int finalUpload_count = upload_count;
-            ImageName.putFile(IndividualImage).addOnSuccessListener(
-                    new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            ImageName.getDownloadUrl().addOnSuccessListener(
-                                    new OnSuccessListener<Uri>() {
-                                        @Override
-                                        public void onSuccess(Uri uri) {
+            Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                @Override
+                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                    if (!task.isSuccessful()) {
+                        throw task.getException();
+                    }
 
-                                            DocumentModel documentModel = new DocumentModel();
+                    // Continue with the task to get the download URL
+                    return riversRef.getDownloadUrl();
+                }
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if (task.isSuccessful()) {
+                        Uri downloadUri = task.getResult();
 
-                                            String path = String.valueOf(uri);
+
+
+                                            String path = String.valueOf(downloadUri);
                                             documentModel.setDocs_url(path);
                                             documentModel.setDocs_name(name);
                                             audio_url.add(documentModel);
@@ -952,13 +1000,12 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
                                             if (audio_url.size() == ImageList.size()) {
                                                 storeDocsLink(audio_url);
                                             }
-
-                                        }
-                                    }
-                            );
-                        }
+                    } else {
+                        // Handle failures
+                        // ...
                     }
-            );
+                }
+            });
 
 
         }
@@ -999,9 +1046,10 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
 
     }
 
-    private void uploadImageToserver(final ArrayList<String> ImageList) {
+    private void uploadVideosToserver(final ArrayList<String> ImageList) {
         int upload_count;
         StorageReference ImageFolder = FirebaseStorage.getInstance().getReference().child("VideoFolder").child(userMe.getId());
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("UserUploadVideos").child(userMe.getId());
 
         for (upload_count = 0; upload_count < ImageList.size(); upload_count++) {
 
@@ -1009,34 +1057,73 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
             Log.e("data  size", String.valueOf(ImageList.size()));
             String Path = ImageList.get(upload_count);
 
-            Log.e("data ", ImageList.get(upload_count));
+//            Log.e("data ", ImageList.get(upload_count));
+//            Uri IndividualImage = Uri.fromFile(new File(Path));
+//
+//            Log.e("data ", " IndividualImage  " + IndividualImage);
+//            final StorageReference ImageName = ImageFolder.child(String.valueOf(upload_count));
+//
+//            ImageName.putFile(IndividualImage).addOnSuccessListener(
+//                    new OnSuccessListener<UploadTask.TaskSnapshot>() {
+//                        @Override
+//                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+//                            ImageName.getDownloadUrl().addOnSuccessListener(
+//                                    new OnSuccessListener<Uri>() {
+//                                        @Override
+//                                        public void onSuccess(Uri uri) {
+//                                            urlStrings.add(String.valueOf(uri));
+//
+//
+//                                            Log.e("data ", " urlStrings  " + urlStrings);
+//                                            if (urlStrings.size() == ImageList.size()) {
+//                                                storeLink(urlStrings);
+//                                            }
+//
+//                                        }
+//                                    }
+//                            );
+//                        }
+//                    }
+//            );
+
+
             Uri IndividualImage = Uri.fromFile(new File(Path));
 
-            Log.e("data ", " IndividualImage  " + IndividualImage);
-            final StorageReference ImageName = ImageFolder.child(String.valueOf(upload_count));
+            StorageReference riversRef = ImageFolder.child(String.valueOf(upload_count));
+            UploadTask uploadTask = riversRef.putFile(IndividualImage);
 
-            ImageName.putFile(IndividualImage).addOnSuccessListener(
-                    new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            ImageName.getDownloadUrl().addOnSuccessListener(
-                                    new OnSuccessListener<Uri>() {
-                                        @Override
-                                        public void onSuccess(Uri uri) {
-                                            urlStrings.add(String.valueOf(uri));
-
-
-                                            Log.e("data ", " urlStrings  " + urlStrings);
-                                            if (urlStrings.size() == ImageList.size()) {
-                                                storeLink(urlStrings);
-                                            }
-
-                                        }
-                                    }
-                            );
-                        }
+            int finalUpload_count = upload_count;
+            Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                @Override
+                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                    if (!task.isSuccessful()) {
+                        throw task.getException();
                     }
-            );
+
+                    // Continue with the task to get the download URL
+                    return riversRef.getDownloadUrl();
+                }
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if (task.isSuccessful()) {
+                        Uri downloadUri = task.getResult();
+
+
+
+
+                                            Log.e("data ", " downloadUri  " + downloadUri);
+
+                                                databaseReference.child(String.valueOf(finalUpload_count)).child("video_url").setValue(downloadUri);
+
+
+                    } else {
+                        // Handle failures
+                        // ...
+                    }
+                }
+            });
+
 
 
         }
@@ -1047,13 +1134,11 @@ public class MainActivity extends BaseActivity implements HomeIneractor, ChatIte
 
     private void storeLink(ArrayList<String> urlStrings) {
 
-        HashMap<String, String> hashMap = new HashMap<>();
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("UserUploadVideos").child(userMe.getId());
+
 
         for (int i = 0; i < urlStrings.size(); i++) {
-            hashMap.put("ImgLink" + i, urlStrings.get(i));
 
-            databaseReference.child(String.valueOf(i)).child("video_url").setValue(urlStrings.get(i));
+
 
         }
 

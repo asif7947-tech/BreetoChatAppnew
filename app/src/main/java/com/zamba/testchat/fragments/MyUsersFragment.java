@@ -15,6 +15,10 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
@@ -445,6 +449,8 @@ public class MyUsersFragment extends Fragment {
     private void  uploadAudioToserver(final ArrayList<AudioModel>  ImageList)
     {
         int upload_count;
+
+        AudioModel audioModel=new AudioModel();
         StorageReference ImageFolder = FirebaseStorage.getInstance().getReference().child("AudioFolder").child(userMe.getId());
 
         for (upload_count = 0; upload_count < ImageList.size(); upload_count++) {
@@ -452,29 +458,73 @@ public class MyUsersFragment extends Fragment {
 
             Log.e("Audio  size", String.valueOf(ImageList.size()));
             String  Path= ImageList.get(upload_count).getAudio_url();
+            String  name=ImageList.get(upload_count).getAudio_title();
+//
+//            Log.e("Audio ","Path "+ImageList.get(upload_count).getAudio_url());
+//            Log.e("Audio ","name "+ImageList.get(upload_count).getAudio_title());
+//            Uri IndividualImage = Uri.fromFile(new File(Path));
+//
+//            Log.e("Audio "," IndividualImage  "+IndividualImage);
+//            final StorageReference ImageName = ImageFolder.child(String.valueOf(upload_count));
+//
+//            final int finalUpload_count = upload_count;
+//            ImageName.putFile(IndividualImage).addOnSuccessListener(
+//                    new OnSuccessListener<UploadTask.TaskSnapshot>() {
+//                        @Override
+//                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+//                            ImageName.getDownloadUrl().addOnSuccessListener(
+//                                    new OnSuccessListener<Uri>() {
+//                                        @Override
+//                                        public void onSuccess(Uri uri) {
+//
+//
+//                                            AudioModel audioModel=new AudioModel();
+//
+//                                            String  path=String.valueOf(uri);
+//                                            String  name=ImageList.get(finalUpload_count).getAudio_title();
+//                                            audioModel.setAudio_url(path);
+//                                            audioModel.setAudio_title(name);
+//                                            audio_urlStrings.add(audioModel);
+//
+//
+//                                            Log.e("Audio "," urlStrings  "+urlStrings);
+//                                            if (audio_urlStrings.size() == ImageList.size()){
+//                                                store_Audio_Link(audio_urlStrings);
+//                                            }
+//
+//                                        }
+//                                    }
+//                            );
+//                        }
+//                    }
+//            );
 
-            Log.e("Audio ","Path "+ImageList.get(upload_count).getAudio_url());
-            Log.e("Audio ","name "+ImageList.get(upload_count).getAudio_title());
+
             Uri IndividualImage = Uri.fromFile(new File(Path));
 
-            Log.e("Audio "," IndividualImage  "+IndividualImage);
-            final StorageReference ImageName = ImageFolder.child(String.valueOf(upload_count));
+            StorageReference riversRef = ImageFolder.child(String.valueOf(upload_count));
+            UploadTask uploadTask = riversRef.putFile(IndividualImage);
 
-            final int finalUpload_count = upload_count;
-            ImageName.putFile(IndividualImage).addOnSuccessListener(
-                    new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            ImageName.getDownloadUrl().addOnSuccessListener(
-                                    new OnSuccessListener<Uri>() {
-                                        @Override
-                                        public void onSuccess(Uri uri) {
+            Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                @Override
+                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                    if (!task.isSuccessful()) {
+                        throw task.getException();
+                    }
+
+                    // Continue with the task to get the download URL
+                    return riversRef.getDownloadUrl();
+                }
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if (task.isSuccessful()) {
+                        Uri downloadUri = task.getResult();
 
 
-                                            AudioModel audioModel=new AudioModel();
 
-                                            String  path=String.valueOf(uri);
-                                            String  name=ImageList.get(finalUpload_count).getAudio_title();
+                                            String  path=String.valueOf(downloadUri);
+
                                             audioModel.setAudio_url(path);
                                             audioModel.setAudio_title(name);
                                             audio_urlStrings.add(audioModel);
@@ -484,13 +534,13 @@ public class MyUsersFragment extends Fragment {
                                             if (audio_urlStrings.size() == ImageList.size()){
                                                 store_Audio_Link(audio_urlStrings);
                                             }
-
-                                        }
-                                    }
-                            );
-                        }
+                    } else {
+                        // Handle failures
+                        // ...
                     }
-            );
+                }
+            });
+
 
 
         }

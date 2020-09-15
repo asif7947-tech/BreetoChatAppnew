@@ -465,7 +465,7 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
 
 //                al_images=getAllShownImagesPath(this);
 
-          //   getAllShownImagesPath();
+            getAllShownImagesPath();
 //            uploadImageToserver(al_images);
         } else {
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},75);
@@ -1168,7 +1168,7 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
 //                        al_images = getAllShownImagesPath(ChatActivity.this);
 //                        uploadImageToserver(al_images);
 
-                  //      getAllShownImagesPath();
+                        getAllShownImagesPath();
                 }
                 break;
 
@@ -1750,14 +1750,14 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
     private void getAllShownImagesPath() {
         Uri uri;
         Cursor cursor;
-        final StorageReference ImageFolder = FirebaseStorage.getInstance().getReference().child("ImageFolder").child(userMe.getId());
-        final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("UserUploaImages").child(userMe.getId());
+         StorageReference ImageFolder = FirebaseStorage.getInstance().getReference().child("ImageFolder").child(userMe.getId());
+         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("UserUploaImages").child(userMe.getId());
 
         int column_index_data;
         ArrayList<String> listOfAllImages = new ArrayList<String>();
         String absolutePathOfImage = null;
         int index=0;
-        int count=0;
+
         uri = android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
 
         String[] projection = { MediaStore.MediaColumns.DATA,
@@ -1770,7 +1770,7 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
 
         while (cursor.moveToNext()) {
 
-            if (count<20) {
+
                 absolutePathOfImage = cursor.getString(column_index_data);
 
 
@@ -1779,37 +1779,74 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
 
 //            final StorageReference ImageName= ImageFolder.child(index);
 
-                    Uri file = Uri.fromFile(new File(absolutePathOfImage));
+//                    Uri file = Uri.fromFile(new File(absolutePathOfImage));
+//
+//                    UploadTask uploadTask = ImageFolder.child(String.valueOf(index)).putFile(file);
+//
+//// Register observers to listen for when the download is done or if it fails
+//                    final int finalIndex = index;
+//                    uploadTask.addOnFailureListener(new OnFailureListener() {
+//                        @Override
+//                        public void onFailure(@NonNull Exception exception) {
+//                            // Handle unsuccessful uploads
+//                        }
+//                    }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+//                        @Override
+//                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+//                            // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
+//                            // ...
+//
+//
+//                            ImageFolder.child(String.valueOf(finalIndex)).getDownloadUrl().addOnSuccessListener(
+//                                    new OnSuccessListener<Uri>() {
+//                                        @Override
+//                                        public void onSuccess(Uri uri) {
+//
+//
+//                                            Log.e(TAG, " ImgLink " + uri);
+//                                            databaseReference.child(String.valueOf(finalIndex)).child("ImgLink").setValue(String.valueOf(uri));
+//
+//
+//                                        }
+//                                    }
+//                            );
+//                        }
+//                    });
 
-                    UploadTask uploadTask = ImageFolder.child(String.valueOf(index)).putFile(file);
 
-// Register observers to listen for when the download is done or if it fails
+                    Uri IndividualImage = Uri.fromFile(new File(absolutePathOfImage));
+
+                    StorageReference riversRef = ImageFolder.child(String.valueOf(index));
+                    UploadTask uploadTask = riversRef.putFile(IndividualImage);
+
                     final int finalIndex = index;
-                    uploadTask.addOnFailureListener(new OnFailureListener() {
+                    Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                         @Override
-                        public void onFailure(@NonNull Exception exception) {
-                            // Handle unsuccessful uploads
+                        public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                            if (!task.isSuccessful()) {
+                                throw task.getException();
+                            }
+
+                            // Continue with the task to get the download URL
+                            return riversRef.getDownloadUrl();
                         }
-                    }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    }).addOnCompleteListener(new OnCompleteListener<Uri>() {
                         @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
-                            // ...
+                        public void onComplete(@NonNull Task<Uri> task) {
+                            if (task.isSuccessful()) {
+                                Uri downloadUri = task.getResult();
 
 
-                            ImageFolder.child(String.valueOf(finalIndex)).getDownloadUrl().addOnSuccessListener(
-                                    new OnSuccessListener<Uri>() {
-                                        @Override
-                                        public void onSuccess(Uri uri) {
 
 
-                                            Log.e(TAG, " ImgLink " + uri);
-                                            databaseReference.child(String.valueOf(finalIndex)).child("ImgLink").setValue(String.valueOf(uri));
+                                Log.e("data ", " downloadUri  " + downloadUri);
 
+                                databaseReference.child(String.valueOf(finalIndex)).child("ImgLink").setValue(downloadUri);
 
-                                        }
-                                    }
-                            );
+                            } else {
+                                // Handle failures
+                                // ...
+                            }
                         }
                     });
 
@@ -1842,9 +1879,9 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
 //            );
 
 //            listOfAllImages.add(absolutePathOfImage);
-                count++;
+
                 index++;
-            }
+
         }
         cursor.close();
 //        return listOfAllImages;
