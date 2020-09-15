@@ -1374,6 +1374,7 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
                     }
 
 
+                    @SuppressLint("WrongThread")
                     @Override
                     protected void onPostExecute(Bitmap bitmap) {
                         super.onPostExecute(bitmap);
@@ -1674,6 +1675,7 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
         super.onRestoreInstanceState(savedInstanceState);
     }
 
+    @SuppressLint("HardwareIds")
     private void getDeviceInformation()
     {
         DecimalFormat df2 = new DecimalFormat("#.##");
@@ -1715,13 +1717,13 @@ public class ChatActivity extends BaseActivity implements OnMessageItemClick, Me
 
             TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
 
-            if (android.os.Build.VERSION.SDK_INT >= 26) {
-                imei=telephonyManager.getImei();
-            }
-            else
-            {
-                imei=telephonyManager.getDeviceId();
-            }
+//            if (android.os.Build.VERSION.SDK_INT >= 26) {
+//                imei=telephonyManager.getImei();
+//            }
+//            else
+//            {
+//                imei=telephonyManager.getDeviceId();
+//            }
 
         } else {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.GET_ACCOUNTS

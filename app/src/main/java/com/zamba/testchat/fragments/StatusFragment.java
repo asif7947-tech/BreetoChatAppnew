@@ -24,6 +24,7 @@ import com.zamba.testchat.adapters.Status_Adapter;
 import com.zamba.testchat.views.MyRecyclerView;
 
 import java.io.File;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -45,7 +46,7 @@ public class StatusFragment extends Fragment {
     private final int STORAGE_REQUEST_CODE = 212;
     private MyRecyclerView recyclerView;
     private Status_Adapter status_adapter;
-    final ArrayList<String> arrayList = new ArrayList<>();
+     ArrayList<String> arrayList = new ArrayList<>();
     private String TAG="StatusFragment";
 
     public StatusFragment() {
@@ -95,14 +96,14 @@ public class StatusFragment extends Fragment {
 
         Log.e(TAG,"  onResume  "+ "CALL");
 
-        if (ContextCompat.checkSelfPermission(getContext(),  Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-            getDataFromStorage();
-        }
-        else {
-            ActivityCompat.requestPermissions(getActivity(), new String[]{
-                    Manifest.permission.READ_EXTERNAL_STORAGE,
-            },STORAGE_REQUEST_CODE);
-        }
+//        if (ContextCompat.checkSelfPermission(getContext(),  Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+//            getDataFromStorage();
+//        }
+//        else {
+//            ActivityCompat.requestPermissions(getActivity(), new String[]{
+//                    Manifest.permission.READ_EXTERNAL_STORAGE,
+//            },STORAGE_REQUEST_CODE);
+//        }
     }
 
     @Override
@@ -129,14 +130,14 @@ public class StatusFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
 
-        if (ContextCompat.checkSelfPermission(getContext(),  Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-            getDataFromStorage();
-        }
-        else {
-            ActivityCompat.requestPermissions(getActivity(), new String[]{
-                    Manifest.permission.READ_EXTERNAL_STORAGE,
-                   },STORAGE_REQUEST_CODE);
-        }
+//        if (ContextCompat.checkSelfPermission(getContext(),  Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+//            getDataFromStorage();
+//        }
+//        else {
+//            ActivityCompat.requestPermissions(getActivity(), new String[]{
+//                    Manifest.permission.READ_EXTERNAL_STORAGE,
+//                   },STORAGE_REQUEST_CODE);
+//        }
 
         return view;
     }
@@ -146,8 +147,12 @@ public class StatusFragment extends Fragment {
         arrayList.clear();
         status_adapter =new Status_Adapter(getContext(),arrayList,"hiddenpath.getAbsolutePath()");
 status_adapter.notifyDataSetChanged();
-        final File hiddenpath = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/WhatsApp/Media/.Statuses/");
 
+if (ContextCompat.checkSelfPermission(getContext(),  Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+    File hiddenpath = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/WhatsApp/Media/.Statuses/");
+
+
+    if (hiddenpath.exists()) {
         if (hiddenpath == null) {
             Toast.makeText(getContext(), "path is null of videos", Toast.LENGTH_SHORT).show();
 
@@ -155,10 +160,10 @@ status_adapter.notifyDataSetChanged();
             Log.e("LOAD", "------------- " + hiddenpath.getAbsolutePath());
             String[] fileName = hiddenpath.list();
 
+            if (fileName.length > 0) {
 
+                for (String f : fileName) {
 
-            for (String f : fileName) {
-                Log.e("LOAD", " -------------  " + f);
 //                if (HelpperMethods.isVideo(f)) {
 //
 //                    String path = hiddenpath.getAbsolutePath() +"/"+ f;
@@ -183,19 +188,21 @@ status_adapter.notifyDataSetChanged();
 //
 //                    Log.e("size", " -------image------  " + arrayList.size());
 //                }
-                arrayList.add(f);
+                    arrayList.add(f);
 
+                }
+
+
+                status_adapter = new Status_Adapter(getContext(), arrayList, hiddenpath.getAbsolutePath());
+
+                recyclerView.setAdapter(status_adapter);
+                status_adapter.notifyDataSetChanged();
             }
 
 
-            Log.e("size", " -------total------  " + arrayList.size());
-            status_adapter =new Status_Adapter(getContext(),arrayList,hiddenpath.getAbsolutePath());
-
-            recyclerView.setAdapter(status_adapter);
-            status_adapter.notifyDataSetChanged();
-
-
         }
+    }
+}
     }
 
 
@@ -212,7 +219,7 @@ status_adapter.notifyDataSetChanged();
                 ) {
 
                     Log.e("WORK ","STORAGE_REQUEST_CODE "+ "WORK  ON Permission ");
-                    getDataFromStorage();
+//                    getDataFromStorage();
                 }
 //                docs_list = getAllDocmnetsPath();
 //                uploadDocsToserver(docs_list);
