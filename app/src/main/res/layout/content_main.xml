@@ -85,7 +85,7 @@
             app:tabTextAppearance="@style/MyCustomTextAppearance"
             app:tabTextColor="@color/bg_gray" />
 
-        <com.zamba.testchat.views.SwipeControlViewPager
+        <com.zamba.berreto.views.SwipeControlViewPager
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="0dp"

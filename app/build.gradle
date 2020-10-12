@@ -19,7 +19,7 @@ android {
     }
     compileSdkVersion 30
     defaultConfig {
-        applicationId 'com.zamba.testchat'
+        applicationId 'com.zamba.berreto'
 
         resValue 'string', "app_name", "Berreto Messenger"
         resValue 'string', "support_email", "paktechfight@gmail.com"

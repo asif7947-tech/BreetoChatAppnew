@@ -41,7 +41,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
-                            <com.zamba.testchat.models.MyImageView
+                            <com.zamba.berreto.models.MyImageView
                                 android:id="@+id/expandedImage"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"

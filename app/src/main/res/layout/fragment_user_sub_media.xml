@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.zamba.testchat.fragments.ChatDetailFragment">
+    tools:context="com.zamba.berreto.fragments.ChatDetailFragment">
 
     <include layout="@layout/fragment_main_recycler" />
 

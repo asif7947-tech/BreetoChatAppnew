@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="10"
-    tools:context="com.zamba.testchat.activities.SignInActivity">
+    tools:context="com.zamba.berreto.activities.SignInActivity">
 
     <include
         layout="@layout/activity_splash"

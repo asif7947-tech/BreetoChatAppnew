@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.zamba.testchat.fragments.UserMediaFragment">
+    tools:context="com.zamba.berreto.fragments.UserMediaFragment">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
